@@ -1,0 +1,135 @@
+/* ============================================
+   Australia's Coffee Culture — Visualisation
+   ============================================ */
+
+:root {
+  --coffee-dark: #3C2415;
+  --coffee-brown: #6F4E37;
+  --coffee-medium: #A0785A;
+  --coffee-light: #C49B7D;
+  --coffee-cream: #D4A96A;
+  --coffee-foam: #FFF3E0;
+  --text-primary: #2C1A0E;
+  --text-secondary: #5D4037;
+  --bg-page: #FAF6F0;
+  --bg-card: #FFFFFF;
+  --accent: #8B5A3C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header {
+  background: linear-gradient(135deg, var(--coffee-dark) 0%, var(--coffee-brown) 100%);
+  color: var(--coffee-foam);
+  padding: 60px 20px 50px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.8em;
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header .tagline {
+  font-size: 1.2em;
+  font-style: italic;
+  color: var(--coffee-cream);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+header .byline {
+  font-size: 0.9em;
+  margin-top: 20px;
+  opacity: 0.7;
+  font-family: 'Helvetica', sans-serif;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(60, 36, 21, 0.08);
+}
+
+section h2 {
+  color: var(--coffee-dark);
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--coffee-cream);
+  padding-bottom: 10px;
+}
+
+section p {
+  color: var(--text-secondary);
+  font-size: 1.05em;
+  margin-bottom: 20px;
+}
+
+/* ---------- Chart containers ---------- */
+.chart {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .chart-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--coffee-dark);
+  color: var(--coffee-foam);
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: var(--coffee-cream);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.sources {
+  margin-top: 20px;
+  font-size: 0.85em;
+  opacity: 0.8;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia's Coffee Culture</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Vega + Vega-Lite + Vega-Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Australia's Coffee Culture</h1>
+    <p class="tagline">How a single beverage became central to a nation's identity, economy, and daily ritual.</p>
+    <p class="byline">FIT2179 Data Visualisation 2 · By YT-03 · 2026</p>
+  </header>
+
+  <div class="container">
+
+    <!-- SECTION 1: The Map -->
+    <section>
+      <h2>A Café on Every Corner</h2>
+      <p>With more than 55,000 cafés nationwide, Australia has one of the highest café densities in the developed world. But the picture isn't uniform — Tasmania and Victoria pour more cafés per person than New South Wales or Queensland, while the Northern Territory remains a coffee outlier.</p>
+      <div class="chart" id="vis1"></div>
+    </section>
+
+    <!-- SECTION 2: Growth -->
+    <section>
+      <h2>A Decade of Growth</h2>
+      <p>Australia's café industry has expanded by nearly 30% since 2017. The pandemic caused a sharp dip in 2020 as venues closed and consumers stayed home, but recovery was swift — by 2022 the industry had not only rebounded but accelerated past pre-COVID levels.</p>
+      <div class="chart" id="vis2"></div>
+    </section>
+
+    <!-- SECTION 3: Two-column row -->
+    <section>
+      <h2>What's in the Cup</h2>
+      <p>Australians have distinct tastes. The flat white — invented in either Sydney or Auckland, depending on who you ask — is a staple, but the latte still dominates café orders nationwide. Together, milk-based drinks make up more than 70% of all coffee sold.</p>
+      <div class="chart-row">
+        <div class="chart" id="vis3"></div>
+        <div class="chart" id="vis4"></div>
+      </div>
+      <p>Prices vary significantly by city. A flat white in Sydney costs an average of $5.50, around $1 more than the same drink in Hobart. Melbourne sits just behind Sydney, while the smaller capitals offer noticeably cheaper coffee.</p>
+    </section>
+
+    <!-- SECTION 4: World comparison -->
+    <section>
+      <h2>The World's Café Capital</h2>
+      <p>Melbourne consistently ranks first globally for cafés per capita — outranking Vienna, Rome, and Paris. The city's café culture, rooted in post-war Italian and Greek immigration, has become inseparable from its identity. London, New York, and Tokyo all trail well behind.</p>
+      <div class="chart" id="vis5"></div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p><strong>Australia's Coffee Culture</strong> — A FIT2179 Data Visualisation by YT-03</p>
+    <div class="sources">
+      <p>Data sources: Australian Bureau of Statistics · IBISWorld · Statista · YouGov Australia · WorldMetrics · Mordor Intelligence</p>
+      <p><a href="https://github.com/YT-03/fit2179-coffee-vis2">View source on GitHub</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const baseURL = "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/vega/";
+
+    const charts = [
+      { id: "#vis1", spec: "01_cafes_by_state_map.json" },
+      { id: "#vis2", spec: "02_cafe_growth_line.json" },
+      { id: "#vis3", spec: "03_coffee_preferences_donut.json" },
+      { id: "#vis4", spec: "04_flat_white_price_bar.json" },
+      { id: "#vis5", spec: "05_melbourne_vs_world_bar.json" }
+    ];
+
+    charts.forEach(c => {
+      vegaEmbed(c.id, baseURL + c.spec, {actions: false, renderer: "svg"})
+        .catch(err => console.error("Error loading " + c.spec, err));
+    });
+  </script>
+
+</body>
+</html>
