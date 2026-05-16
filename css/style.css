@@ -48,8 +48,8 @@ header .tagline {
   font-size: 1.2em;
   font-style: italic;
   color: var(--coffee-cream);
-  max-width: 700px;
   margin: 0 auto;
+  white-space: nowrap;
 }
 
 header .byline {
