@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australia's Café Boom",
+    "subtitle": "Total number of cafés has grown 29% since 2017, despite a dip during COVID.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 600,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafe_growth.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "color": "#D4A96A",
+        "opacity": 0.3,
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal", "title": null, "axis": {"format": "%Y", "labelAngle": 0}},
+        "y": {"field": "Total_Cafes", "type": "quantitative", "title": "Number of cafés", "scale": {"domain": [40000, 60000]}}
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "#6F4E37", "strokeWidth": 3, "interpolate": "monotone"},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Total_Cafes", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "point", "color": "#6F4E37", "size": 80, "filled": true},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Total_Cafes", "type": "quantitative"},
+        "tooltip": [
+          {"field": "Year", "type": "temporal", "format": "%Y", "title": "Year"},
+          {"field": "Total_Cafes", "type": "quantitative", "title": "Total cafés", "format": ","}
+        ]
+      }
+    }
+  ]
+}
