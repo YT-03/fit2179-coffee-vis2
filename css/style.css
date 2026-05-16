@@ -91,7 +91,7 @@ section p {
 
 /* ---------- Chart containers ---------- */
 .chart {
-  margin: 20px 0;
+  margin: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
