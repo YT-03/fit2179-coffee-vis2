@@ -100,18 +100,14 @@ section p {
 }
 
 /* Force Vega-Embed's wrapper and SVG to center */
+/* Force map to center, other charts stay default */
 .chart {
   margin: 20px 0;
   width: 100%;
-  text-align: center;
   overflow-x: auto;
 }
 
-#vis1 svg,
-#vis2 svg,
-#vis3 svg,
-#vis4 svg,
-#vis5 svg {
+#vis1 svg {
   display: block;
   margin: 0 auto !important;
 }
