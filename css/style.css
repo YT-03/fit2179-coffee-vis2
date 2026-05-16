@@ -91,12 +91,24 @@ section p {
 
 /* ---------- Chart containers ---------- */
 .chart {
-  margin: 10px 0;
+  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   overflow-x: auto;
+}
+
+/* Force Vega-Embed's wrapper and SVG to center */
+.chart > div,
+.chart .vega-embed,
+.chart .vega-embed > div {
+  margin: 0 auto !important;
+}
+
+.chart svg {
+  display: block;
+  margin: 0 auto !important;
 }
 
 .chart-row {
