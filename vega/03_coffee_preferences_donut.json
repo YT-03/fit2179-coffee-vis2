@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "What Australians Order",
+    "subtitle": "Latte and Flat White together make up more than half of all coffees sold.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 400,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/coffee_preferences.csv"
+  },
+  "transform": [
+    {"calculate": "datum.Percent + '%'", "as": "label"}
+  ],
+  "encoding": {
+    "theta": {
+      "field": "Percent",
+      "type": "quantitative",
+      "stack": true
+    },
+    "order": {"field": "Percent", "type": "quantitative", "sort": "descending"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 80, "outerRadius": 140, "stroke": "white", "strokeWidth": 2},
+      "encoding": {
+        "color": {
+          "field": "Type",
+          "type": "nominal",
+          "sort": {"field": "Percent", "order": "descending"},
+          "scale": {
+            "domain": ["Latte", "Flat White", "Cappuccino", "Long Black", "Espresso", "Cold Brew", "Other"],
+            "range": ["#6F4E37", "#A0785A", "#C49B7D", "#8B5A3C", "#5D3A1F", "#D4A96A", "#E8D4B8"]
+          },
+          "legend": {"title": "Coffee type"}
+        },
+        "tooltip": [
+          {"field": "Type", "type": "nominal", "title": "Coffee"},
+          {"field": "Percent", "type": "quantitative", "title": "Share (%)"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "radius": 165, "fontSize": 12, "fontWeight": "bold"},
+      "encoding": {
+        "text": {"field": "label", "type": "nominal"},
+        "color": {"value": "#3C2415"}
+      }
+    }
+  ],
+  "view": {"stroke": null}
+}
