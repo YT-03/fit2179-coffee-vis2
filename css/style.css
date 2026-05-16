@@ -107,14 +107,13 @@ section p {
   overflow-x: auto;
 }
 
-.chart > * {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: inline-block !important;
-}
-
-.chart svg {
-  display: inline-block !important;
+#vis1 svg,
+#vis2 svg,
+#vis3 svg,
+#vis4 svg,
+#vis5 svg {
+  display: block;
+  margin: 0 auto !important;
 }
 
 @media (max-width: 1300px) {
