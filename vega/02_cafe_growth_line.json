@@ -12,31 +12,30 @@
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafe_growth.csv"
   },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "title": null,
+      "axis": {"format": "%Y", "labelAngle": 0, "tickCount": 8}
+    },
+    "y": {
+      "field": "Total_Cafes",
+      "type": "quantitative",
+      "title": "Number of cafés",
+      "scale": {"domain": [40000, 60000], "nice": false}
+    }
+  },
   "layer": [
     {
-      "mark": {
-        "type": "area",
-        "color": "#D4A96A",
-        "opacity": 0.3,
-        "interpolate": "monotone"
-      },
-      "encoding": {
-        "x": {"field": "Year", "type": "temporal", "title": null, "axis": {"format": "%Y", "labelAngle": 0}},
-        "y": {"field": "Total_Cafes", "type": "quantitative", "title": "Number of cafés", "scale": {"domain": [40000, 60000]}}
-      }
+      "mark": {"type": "area", "color": "#D4A96A", "opacity": 0.3, "clip": true, "interpolate": "monotone"}
     },
     {
-      "mark": {"type": "line", "color": "#6F4E37", "strokeWidth": 3, "interpolate": "monotone"},
-      "encoding": {
-        "x": {"field": "Year", "type": "temporal"},
-        "y": {"field": "Total_Cafes", "type": "quantitative"}
-      }
+      "mark": {"type": "line", "color": "#6F4E37", "strokeWidth": 3, "interpolate": "monotone"}
     },
     {
       "mark": {"type": "point", "color": "#6F4E37", "size": 80, "filled": true},
       "encoding": {
-        "x": {"field": "Year", "type": "temporal"},
-        "y": {"field": "Total_Cafes", "type": "quantitative"},
         "tooltip": [
           {"field": "Year", "type": "temporal", "format": "%Y", "title": "Year"},
           {"field": "Total_Cafes", "type": "quantitative", "title": "Total cafés", "format": ","}
