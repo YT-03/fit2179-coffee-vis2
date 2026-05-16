@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Cafés per 100,000 People by Australian State",
+    "subtitle": "Tasmania leads on a per-capita basis, while NSW and VIC dominate by total count.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 600,
+  "height": 450,
+  "projection": {"type": "mercator"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/australia_states.json",
+    "format": {"type": "json", "property": "features"}
+  },
+  "transform": [
+    {
+      "calculate": "{'New South Wales':'NSW','Victoria':'VIC','Queensland':'QLD','South Australia':'SA','Western Australia':'WA','Tasmania':'TAS','Northern Territory':'NT','Australian Capital Territory':'ACT'}[datum.properties.STATE_NAME]",
+      "as": "state_abbr"
+    },
+    {
+      "lookup": "state_abbr",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafes_by_state.csv"
+        },
+        "key": "State",
+        "fields": ["Cafes", "Cafes_per_100k", "Population_M"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1},
+  "encoding": {
+    "color": {
+      "field": "Cafes_per_100k",
+      "type": "quantitative",
+      "scale": {"scheme": "browns"},
+      "legend": {"title": "Cafés per 100k people"}
+    },
+    "tooltip": [
+      {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+      {"field": "Cafes", "type": "quantitative", "title": "Total cafés", "format": ","},
+      {"field": "Population_M", "type": "quantitative", "title": "Population (M)"},
+      {"field": "Cafes_per_100k", "type": "quantitative", "title": "Cafés per 100k"}
+    ]
+  }
+}
