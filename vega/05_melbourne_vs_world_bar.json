@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Melbourne: The World's Café Capital",
+    "subtitle": "Melbourne has more cafés per person than Vienna, Rome, or Paris.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 500,
+  "height": 320,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/melbourne_vs_world.csv"
+  },
+  "transform": [
+    {"calculate": "datum.City === 'Melbourne' ? 'Melbourne' : 'Other'", "as": "is_melbourne"}
+  ],
+  "encoding": {
+    "y": {
+      "field": "City",
+      "type": "nominal",
+      "sort": ["Melbourne", "Vienna", "Rome", "Paris", "Sydney", "London", "New York", "Tokyo"],
+      "title": null,
+      "axis": {"labelFontSize": 12}
+    },
+    "x": {
+      "field": "Cafes_per_100k",
+      "type": "quantitative",
+      "title": "Cafés per 100,000 people",
+      "axis": {"grid": true}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadiusEnd": 4},
+      "encoding": {
+        "color": {
+          "field": "is_melbourne",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Melbourne", "Other"],
+            "range": ["#6F4E37", "#C49B7D"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "City", "type": "nominal"},
+          {"field": "Cafes_per_100k", "type": "quantitative", "title": "Cafés per 100k"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 5,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#3C2415"
+      },
+      "encoding": {
+        "text": {"field": "Cafes_per_100k", "type": "quantitative"}
+      }
+    }
+  ]
+}
