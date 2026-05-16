@@ -100,26 +100,21 @@ section p {
 }
 
 /* Force Vega-Embed's wrapper and SVG to center */
-.chart > div,
-.chart .vega-embed,
-.chart .vega-embed > div {
-  margin: 0 auto !important;
+.chart {
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.chart > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: inline-block !important;
 }
 
 .chart svg {
-  display: block;
-  margin: 0 auto !important;
-}
-
-.chart-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.chart-row .chart {
-  margin: 10px 0;
+  display: inline-block !important;
 }
 
 @media (max-width: 1300px) {
