@@ -103,11 +103,20 @@ section p {
   margin: 0 auto !important;
 }
 
+/* Two-column layout for paired charts */
+.chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
 @media (max-width: 900px) {
   .chart-row {
     grid-template-columns: 1fr;
   }
 }
+
 /* ---------- Footer ---------- */
 footer {
   background: var(--coffee-dark);
