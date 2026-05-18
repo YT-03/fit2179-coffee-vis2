@@ -90,16 +90,7 @@ section p {
 }
 
 /* ---------- Chart containers ---------- */
-.chart {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  overflow-x: auto;
-}
 
-/* Force Vega-Embed's wrapper and SVG to center */
 /* Force map to center, other charts stay default */
 .chart {
   margin: 20px 0;
@@ -112,12 +103,11 @@ section p {
   margin: 0 auto !important;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 900px) {
   .chart-row {
     grid-template-columns: 1fr;
   }
 }
-
 /* ---------- Footer ---------- */
 footer {
   background: var(--coffee-dark);
