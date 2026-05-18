@@ -141,3 +141,13 @@ footer a:hover {
   font-size: 0.85em;
   opacity: 0.8;
 }
+
+.insight {
+  font-style: italic;
+  font-size: 1.05em;
+  color: var(--coffee-brown);
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--coffee-cream);
+  text-align: center;
+}
