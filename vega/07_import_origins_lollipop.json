@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where Australia's Coffee Comes From",
+    "subtitle": "Brazil supplies nearly a third of all Australian coffee imports, with Vietnam and Colombia close behind.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 500,
+  "height": 320,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/import_origins.csv"
+  },
+  "transform": [
+    {"calculate": "datum.Country === 'Brazil' ? 'Brazil' : 'Other'", "as": "is_brazil"}
+  ],
+  "encoding": {
+    "y": {
+      "field": "Country",
+      "type": "nominal",
+      "sort": ["Brazil", "Vietnam", "Colombia", "Ethiopia", "Indonesia", "Papua New Guinea", "Other"],
+      "title": null,
+      "axis": {"labelFontSize": 12}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "rule", "strokeWidth": 2},
+      "encoding": {
+        "x": {
+          "field": "Share_Percent",
+          "type": "quantitative",
+          "title": "Share of imports (%)",
+          "scale": {"domain": [0, 35]}
+        },
+        "x2": {"datum": 0},
+        "color": {
+          "field": "is_brazil",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Brazil", "Other"],
+            "range": ["#6F4E37", "#C49B7D"]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {"type": "circle", "opacity": 0.9},
+      "encoding": {
+        "x": {"field": "Share_Percent", "type": "quantitative"},
+        "size": {
+          "field": "Share_Percent",
+          "type": "quantitative",
+          "scale": {"range": [200, 1200]},
+          "legend": null
+        },
+        "color": {
+          "field": "is_brazil",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Brazil", "Other"],
+            "range": ["#6F4E37", "#C49B7D"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Share_Percent", "type": "quantitative", "title": "Share (%)"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 18,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#3C2415"
+      },
+      "encoding": {
+        "x": {"field": "Share_Percent", "type": "quantitative"},
+        "text": {"field": "Share_Percent", "type": "quantitative", "format": ".0f"}
+      }
+    }
+  ]
+}
