@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "From $2 Billion to $7 Billion",
+    "subtitle": "Australia's café industry has more than tripled in revenue since 2004, though growth has steadied since the pandemic.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 600,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/industry_revenue.csv"
+  },
+  "transform": [
+    {
+      "window": [{"op": "lag", "field": "Revenue_BAUD", "as": "prev_revenue"}],
+      "sort": [{"field": "Year"}]
+    },
+    {
+      "calculate": "datum.prev_revenue ? ((datum.Revenue_BAUD - datum.prev_revenue) / datum.prev_revenue) * 100 : null",
+      "as": "growth_pct"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {"labelAngle": 0, "labelFontSize": 11}
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "color": "#A0785A", "cornerRadiusEnd": 3},
+      "encoding": {
+        "y": {
+          "field": "Revenue_BAUD",
+          "type": "quantitative",
+          "title": "Revenue (AUD billions)",
+          "axis": {"titleColor": "#6F4E37", "format": "$.1f"}
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal"},
+          {"field": "Revenue_BAUD", "type": "quantitative", "title": "Revenue ($B)", "format": ".1f"},
+          {"field": "growth_pct", "type": "quantitative", "title": "Growth vs prev (%)", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "#3C2415", "strokeWidth": 2.5, "interpolate": "monotone"},
+      "encoding": {
+       "y": {
+        "field": "growth_pct",
+        "type": "quantitative",
+        "title": "Growth rate (%)",
+        "axis": {"titleColor": "#3C2415", "orient": "right", "format": ".0f"}
+        }
+      }
+    },
+    {
+      "mark": {"type": "point", "color": "#3C2415", "size": 60, "filled": true},
+      "encoding": {
+        "y": {"field": "growth_pct", "type": "quantitative"}
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}}
+}
