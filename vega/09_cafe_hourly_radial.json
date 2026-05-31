@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "When Australia Visits the Café",
+    "subtitle": "Café traffic across a typical 24 hours. Morning rush dominates — 7-10am drives most visits, with a smaller lunch bump.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 420,
+  "height": 420,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafe_hourly_traffic.csv"
+  },
+  "transform": [
+    {"calculate": "datum.Hour >= 7 && datum.Hour <= 10 ? 'Morning rush' : (datum.Hour === 12 || datum.Hour === 13 ? 'Lunch bump' : 'Other')", "as": "period"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 40, "stroke": "white", "strokeWidth": 1.5},
+      "encoding": {
+        "theta": {
+          "field": "Hour",
+          "type": "quantitative",
+          "scale": {"domain": [0, 24], "range": [0, 6.283185307]}
+        },
+        "theta2": {
+          "calculate": "datum.Hour + 1"
+        },
+        "radius": {
+          "field": "Visits_Index",
+          "type": "quantitative",
+          "scale": {"type": "linear", "range": [40, 180], "domain": [0, 100]}
+        },
+        "color": {
+          "field": "period",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Morning rush", "Lunch bump", "Other"],
+            "range": ["#3C2415", "#A0785A", "#D4A96A"]
+          },
+          "legend": {"title": "Time of day", "orient": "right"}
+        },
+        "tooltip": [
+          {"field": "Hour_Label", "type": "nominal", "title": "Hour"},
+          {"field": "Visits_Index", "type": "quantitative", "title": "Visit index"}
+        ]
+      }
+    }
+  ],
+  "view": {"stroke": null}
+}
