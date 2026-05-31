@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Coffee Through the Generations",
+    "subtitle": "Each row shows 10 people. Filled cups represent daily coffee drinkers in that age group.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 480,
+  "height": 320,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/demographics_waffle.csv"
+  },
+  "transform": [
+    {
+      "lookup": "Age_Group",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/consumer_demographics.csv"
+        },
+        "key": "Age_Group",
+        "fields": ["Daily_Drinkers_Percent"]
+      }
+    }
+  ],
+  "mark": {"type": "text", "fontSize": 32, "baseline": "middle"},
+  "encoding": {
+    "x": {
+      "field": "cup",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "Age_Group",
+      "type": "nominal",
+      "sort": ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"],
+      "title": null,
+      "axis": {"labelFontSize": 13, "labelPadding": 12, "ticks": false, "domain": false}
+    },
+    "text": {"value": "☕"},
+    "color": {
+      "field": "filled",
+      "type": "nominal",
+      "scale": {
+        "domain": [1, 0],
+        "range": ["#6F4E37", "#E8D4B8"]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "Age_Group", "type": "nominal", "title": "Age"},
+      {"field": "Daily_Drinkers_Percent", "type": "quantitative", "title": "% who drink daily"}
+    ]
+  }
+}
