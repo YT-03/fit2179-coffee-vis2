@@ -2,18 +2,17 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Inside Melbourne's Café Capital",
-    "subtitle": "Cafés and restaurants by CLUE small area, 2024. The CBD alone hosts 735 venues — more than half the city's total.",
-    "fontSize": 16,
+    "subtitle": "Cafés and restaurants across the City of Melbourne's 13 inner-city zones, 2024. The CBD alone hosts 735 venues — more than half the inner city's total.",    "fontSize": 16,
     "subtitleFontSize": 12,
     "anchor": "start"
   },
   "width": 600,
   "height": 500,
   "projection": {
-    "type": "mercator",
-    "center": [144.955, -37.81],
-    "scale": 90000
-  },
+  "type": "mercator",
+  "center": [144.948, -37.808],
+  "scale": 160000
+    },
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/melbourne_clue_areas.geojson",
     "format": {"type": "json", "property": "features"}
