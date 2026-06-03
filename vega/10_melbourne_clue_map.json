@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Inside Melbourne's Café Capital",
+    "subtitle": "Cafés and restaurants by CLUE small area, 2024. The CBD alone hosts 735 venues — more than half the city's total.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 600,
+  "height": 500,
+  "projection": {
+    "type": "mercator",
+    "center": [144.955, -37.81],
+    "scale": 90000
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/melbourne_clue_areas.geojson",
+    "format": {"type": "json", "property": "features"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.featurenam",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafes_by_clue_area.csv"
+        },
+        "key": "CLUE_Small_Area",
+        "fields": ["Cafes_Restaurants"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1.5},
+  "encoding": {
+    "color": {
+      "field": "Cafes_Restaurants",
+      "type": "quantitative",
+      "scale": {"scheme": "browns", "type": "log"},
+      "legend": {"title": "Cafés & restaurants"}
+    },
+    "tooltip": [
+      {"field": "properties.featurenam", "type": "nominal", "title": "Area"},
+      {"field": "Cafes_Restaurants", "type": "quantitative", "title": "Cafés & restaurants", "format": ","}
+    ]
+  }
+}
