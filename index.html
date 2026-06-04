@@ -134,7 +134,7 @@
           <p class="chart-caption">Brazil, Vietnam, and Colombia together supply almost two thirds of Australia's coffee imports — a global supply chain for a deeply local ritual.</p>
         </div>
         <div class="chart-block">
-          <div class="chart" id="vis2b"></div>
+          <div class="chart" id="vis_cups"></div>
           <p class="chart-caption">Daily cups consumed have risen steadily from 13.1 million in 2015 to 16.3 million in 2024 — the only dip came during COVID lockdowns in 2020.</p>
         </div>
       </div>
@@ -195,16 +195,17 @@
     const baseURL = "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/vega/";
 
     const charts = [
-      { id: "#vis1",  spec: "01_cafes_by_state_map.json" },
-      { id: "#vis2",  spec: "02_cafe_growth_line.json" },
-      { id: "#vis3",  spec: "03_coffee_preferences_donut.json" },
-      { id: "#vis4",  spec: "04_flat_white_price_bar.json" },
-      { id: "#vis5",  spec: "05_melbourne_vs_world_bar.json" },
-      { id: "#vis6",  spec: "06_industry_revenue_combo.json" },
-      { id: "#vis7",  spec: "07_import_origins_lollipop.json" },
-      { id: "#vis8",  spec: "08_demographics_waffle.json" },
-      { id: "#vis9",  spec: "09_cafe_hourly_radial.json" },
-      { id: "#vis10", spec: "10_melbourne_clue_map.json" }
+      { id: "#vis1",     spec: "01_cafes_by_state_map.json" },
+      { id: "#vis2",     spec: "02_cafe_growth_line.json" },
+      { id: "#vis3",     spec: "03_coffee_preferences_donut.json" },
+      { id: "#vis4",     spec: "04_flat_white_price_bar.json" },
+      { id: "#vis5",     spec: "05_melbourne_vs_world_bar.json" },
+      { id: "#vis6",     spec: "06_industry_revenue_combo.json" },
+      { id: "#vis7",     spec: "07_import_origins_lollipop.json" },
+      { id: "#vis8",     spec: "08_demographics_waffle.json" },
+      { id: "#vis9",     spec: "09_cafe_hourly_radial.json" },
+      { id: "#vis10",    spec: "10_melbourne_clue_map.json" },
+      { id: "#vis_cups", spec: "09_daily_cups.json" }
     ];
 
     charts.forEach(c => {
