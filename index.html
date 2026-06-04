@@ -1,4 +1,41 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia's Coffee Culture</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Vega + Vega-Lite + Vega-Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Australia's Coffee Culture</h1>
+    <p class="tagline">How a single beverage became central to a nation's daily ritual.</p>
+    <p class="byline">FIT2179 Data Visualisation 2 · By Yum Tarabzoni </p>
+  </header>
+
+  <!-- STAT CARDS -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-number">55,000+</span>
+      <span class="stat-label">cafés nationwide</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">$7B</span>
+      <span class="stat-label">industry value in 2024</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">16.3M</span>
+      <span class="stat-label">cups consumed every day</span>
+    </div>
+  </div>
+
+  <div class="container">
 
     <!-- MAP 1: Australia choropleth (full width) -->
     <section>
@@ -47,3 +84,36 @@
     </section>
 
   </div>
+
+  <footer>
+    <p><strong>Australia's Coffee Culture</strong> — A Visualisation by Yum Tarabzoni</p>
+    <div class="sources">
+      <p>Data sources: Australian Bureau of Statistics · IBISWorld · Statista · YouGov Australia · WorldMetrics · Mordor Intelligence · City of Melbourne CLUE</p>
+      <p><a href="https://github.com/YT-03/fit2179-coffee-vis2">View source on GitHub</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const baseURL = "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/vega/";
+
+    const charts = [
+      { id: "#vis1",  spec: "01_cafes_by_state_map.json" },
+      { id: "#vis2",  spec: "02_cafe_growth_line.json" },
+      { id: "#vis3",  spec: "03_coffee_preferences_donut.json" },
+      { id: "#vis4",  spec: "04_flat_white_price_bar.json" },
+      { id: "#vis5",  spec: "05_melbourne_vs_world_bar.json" },
+      { id: "#vis6",  spec: "06_industry_revenue_combo.json" },
+      { id: "#vis7",  spec: "07_import_origins_lollipop.json" },
+      { id: "#vis8",  spec: "08_demographics_waffle.json" },
+      { id: "#vis9",  spec: "09_cafe_hourly_radial.json" },
+      { id: "#vis10", spec: "10_melbourne_clue_map.json" }
+    ];
+
+    charts.forEach(c => {
+      vegaEmbed(c.id, baseURL + c.spec, {actions: false, renderer: "svg"})
+        .catch(err => console.error("Error loading " + c.spec, err));
+    });
+  </script>
+
+</body>
+</html>
