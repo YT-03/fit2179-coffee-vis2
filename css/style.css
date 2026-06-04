@@ -155,3 +155,38 @@ footer a:hover {
   width: 100%;
   display: block;
 }
+
+/* ---------- Stat Cards ---------- */
+.stats-bar {
+  background: var(--coffee-dark);
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 30px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.4em;
+  font-weight: 700;
+  color: var(--coffee-cream);
+  font-family: 'Georgia', serif;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85em;
+  color: var(--coffee-foam);
+  opacity: 0.75;
+  font-family: 'Helvetica', sans-serif;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
