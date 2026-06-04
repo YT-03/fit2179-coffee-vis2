@@ -20,22 +20,22 @@
   </header>
 
   <!-- STAT CARDS -->
-<div class="stats-bar">
-  <div class="stat-card">
-    <span class="stat-number">55,000+</span>
-    <span class="stat-label">cafés nationwide</span>
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-number">55,000+</span>
+      <span class="stat-label">cafés nationwide</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">$7B</span>
+      <span class="stat-label">industry value in 2024</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">16.3M</span>
+      <span class="stat-label">cups consumed every day</span>
+    </div>
   </div>
-  <div class="stat-card">
-    <span class="stat-number">$7B</span>
-    <span class="stat-label">industry value in 2024</span>
-  </div>
-  <div class="stat-card">
-    <span class="stat-number">16.3M</span>
-    <span class="stat-label">cups consumed every day</span>
-  </div>
-</div>
 
-<div class="container">
+  <div class="container">
 
     <!-- SECTION 1: Map (full width) -->
     <section>
@@ -45,34 +45,64 @@
       <p class="insight">Tasmania quietly leads the country — its remote charm draws cafés in numbers that punch well above its small population.</p>
     </section>
 
-    <!-- SECTION 2: Growth + Preferences (two columns) -->
+    <!-- SECTION 2: Growth + Revenue (two columns) -->
     <section>
-      <h2>A Growing Industry, A Distinctive Taste</h2>
-      <p>Australia's café industry has expanded by nearly 30% since 2017. The pandemic caused a sharp dip in 2020, but recovery was swift, by 2022 the industry had not only rebounded but accelerated past pre-COVID levels. Meanwhile, milk-based drinks dominate what's in the cup: the latte and flat white together account for more than half of all coffee sold.</p>
+      <h2>A Growing Industry</h2>
+      <p>Australia's café industry has expanded by nearly 30% since 2017. The pandemic caused a sharp dip in 2020, but recovery was swift — by 2022 the industry had not only rebounded but accelerated past pre-COVID levels. Revenue has more than tripled since 2004, from $2 billion to over $7 billion today.</p>
       <div class="chart-row">
         <div class="chart" id="vis2"></div>
-        <div class="chart" id="vis3"></div>
+        <div class="chart" id="vis6"></div>
       </div>
-      <p class="insight">From a COVID low to record growth: the café industry didn't just survive the pandemic, it adapted and accelerated — and what Australians ordered stayed remarkably consistent.</p>
-
+      <p class="insight">From a COVID low to record growth: the café industry didn't just survive the pandemic, it adapted and accelerated.</p>
     </section>
 
-    <!-- SECTION 3: Price + World comparison (two columns) -->
+    <!-- SECTION 3: Preferences + Price (two columns) -->
     <section>
-      <h2>The Price of a Cup, and the Capital of Coffee</h2>
-      <p>Prices vary significantly by city. A flat white in Sydney costs an average of $5.50, around $1 more than the same drink in Hobart. But Melbourne tells a different story on the world stage, it consistently ranks first globally for cafés per capita, outranking Vienna, Rome, and Paris. The city's café culture, rooted in post-war Italian and Greek immigration, has become inseparable from its identity.</p>
+      <h2>A Distinctive Taste, A Varying Price</h2>
+      <p>Milk-based drinks dominate what's in the cup — the latte and flat white together account for more than half of all coffee sold. Meanwhile prices vary significantly by city, with Sydney charging around $1 more than Hobart for the same flat white.</p>
       <div class="chart-row">
+        <div class="chart" id="vis3"></div>
         <div class="chart" id="vis4"></div>
-        <div class="chart" id="vis5"></div>
       </div>
-      <p class="insight">A flat white may cost a dollar more in Sydney than Hobart, but no city in the world rivals Melbourne for sheer café concentration.</p>
+      <p class="insight">What Australians order has stayed remarkably consistent — even through a pandemic and rising prices.</p>
+    </section>
+
+    <!-- SECTION 4: Demographics + Hourly (two columns) -->
+    <section>
+      <h2>Who Drinks, and When</h2>
+      <p>Coffee drinking peaks in the 25–34 age group, where nearly three quarters drink coffee daily. But even among those over 65, more than half reach for a cup every day. And when they drink it — the morning rush between 7am and 10am accounts for the overwhelming majority of café visits.</p>
+      <div class="chart-row">
+        <div class="chart" id="vis8"></div>
+        <div class="chart" id="vis9"></div>
+      </div>
+      <p class="insight">Coffee isn't just a habit — it's a generational constant. Every age group drinks it, every morning.</p>
+    </section>
+
+    <!-- SECTION 5: Import Origins (full width) -->
+    <section>
+      <h2>Where the Beans Come From</h2>
+      <p>Australia imports coffee from across the globe, but Brazil alone supplies nearly a third of all imports. Vietnam and Colombia follow closely — together the top three countries account for nearly two thirds of Australia's coffee supply.</p>
+      <div class="chart" id="vis7"></div>
+      <p class="insight">Brazil, Vietnam, and Colombia supply almost two thirds of every cup Australians drink.</p>
+    </section>
+
+    <!-- SECTION 6: Melbourne vs World + CLUE map (two columns) -->
+    <section>
+      <h2>The Capital of Coffee</h2>
+      <p>Melbourne consistently ranks first globally for cafés per capita, outranking Vienna, Rome, and Paris. The city's café culture, rooted in post-war Italian and Greek immigration, has become inseparable from its identity — concentrated most densely in the CBD and inner-city zones.</p>
+      <div class="chart-row">
+        <div class="chart" id="vis5"></div>
+        <div class="chart" id="vis10"></div>
+      </div>
+      <p class="insight">No city in the world rivals Melbourne for sheer café concentration.</p>
     </section>
 
   </div>
+
   <footer>
     <p><strong>Australia's Coffee Culture</strong> — A Visualisation by Yum Tarabzoni</p>
     <div class="sources">
-      <p>Data sources: Australian Bureau of Statistics · IBISWorld · Statista · YouGov Australia · WorldMetrics · Mordor Intelligence</p>
+      <p>Data sources: Australian Bureau of Statistics · IBISWorld · Statista · YouGov Australia · WorldMetrics · Mordor Intelligence · City of Melbourne CLUE</p>
       <p><a href="https://github.com/YT-03/fit2179-coffee-vis2">View source on GitHub</a></p>
     </div>
   </footer>
@@ -81,11 +111,16 @@
     const baseURL = "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/vega/";
 
     const charts = [
-      { id: "#vis1", spec: "01_cafes_by_state_map.json" },
-      { id: "#vis2", spec: "02_cafe_growth_line.json" },
-      { id: "#vis3", spec: "03_coffee_preferences_donut.json" },
-      { id: "#vis4", spec: "04_flat_white_price_bar.json" },
-      { id: "#vis5", spec: "05_melbourne_vs_world_bar.json" }
+      { id: "#vis1",  spec: "01_cafes_by_state_map.json" },
+      { id: "#vis2",  spec: "02_cafe_growth_line.json" },
+      { id: "#vis3",  spec: "03_coffee_preferences_donut.json" },
+      { id: "#vis4",  spec: "04_flat_white_price_bar.json" },
+      { id: "#vis5",  spec: "05_melbourne_vs_world_bar.json" },
+      { id: "#vis6",  spec: "06_industry_revenue_combo.json" },
+      { id: "#vis7",  spec: "07_import_origins_lollipop.json" },
+      { id: "#vis8",  spec: "08_demographics_waffle.json" },
+      { id: "#vis9",  spec: "09_cafe_hourly_radial.json" },
+      { id: "#vis10", spec: "10_melbourne_clue_map.json" }
     ];
 
     charts.forEach(c => {
