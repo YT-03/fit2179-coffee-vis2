@@ -4,8 +4,12 @@
   "title": {
     "text": "Cafés per 100,000 People by Australian State",
     "subtitle": "Tasmania leads on a per-capita basis, while NSW and VIC dominate by total count.",
-    "fontSize": 16,
+    "fontSize": 15,
     "subtitleFontSize": 12,
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37",
+    "font": "Georgia, serif",
+    "subtitleFont": "Georgia, serif",
     "anchor": "start"
   },
   "width": 600,
@@ -37,7 +41,13 @@
       "field": "Cafes_per_100k",
       "type": "quantitative",
       "scale": {"scheme": "browns"},
-      "legend": {"title": "Cafés per 100k people"}
+      "legend": {
+        "title": "Cafés per 100k people",
+        "titleColor": "#3C2415",
+        "titleFont": "Georgia, serif",
+        "labelColor": "#6F4E37",
+        "labelFont": "Helvetica, sans-serif"
+      }
     },
     "tooltip": [
       {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
@@ -48,6 +58,7 @@
   },
   "config": {
     "background": "transparent",
-    "view": {"stroke": "transparent"}
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
   }
 }
