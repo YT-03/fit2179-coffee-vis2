@@ -12,22 +12,22 @@
 <body>
 
   <header>
-  <div class="header-inner">
-    <div class="header-left">
-      <p class="byline">FIT2179 Data Visualisation 2 · By Yum Tarabzoni · 2026</p>
-      <h1>Australia's Coffee Culture</h1>
-      <p class="tagline">How a single beverage became central to a nation's daily ritual.</p>
+    <div class="header-inner">
+      <div class="header-left">
+        <p class="byline">FIT2179 Data Visualisation 2 · By Yum Tarabzoni · 2026</p>
+        <h1>Australia's Coffee Culture</h1>
+        <p class="tagline">How a single beverage became central to a nation's daily ritual.</p>
+      </div>
+      <div class="header-right">
+        <p class="nav-label">Jump to chapter</p>
+        <nav class="header-nav">
+          <a href="#ch1">01 · The Nation</a>
+          <a href="#ch2">02 · The Cup</a>
+          <a href="#ch3">03 · The Capital</a>
+        </nav>
+      </div>
     </div>
-    <div class="header-right">
-      <p class="nav-label">Jump to chapter</p>
-      <nav class="header-nav">
-        <a href="#ch1">01 · The Nation  </a>
-        <a href="#ch2">  02 · The Cup   </a>
-        <a href="#ch3">03 · The Capital</a>
-      </nav>
-    </div>
-  </div>
-</header>
+  </header>
 
   <div class="stats-bar">
     <div class="stat-card">
@@ -46,174 +46,34 @@
 
   <div class="container">
 
-    <!-- ===================== CHAPTER 1 ===================== -->
     <div class="chapter-label" id="ch1">Chapter 01 · The Nation</div>
 
-    <!-- MAP 1: Full width choropleth -->
-  <section class="section-card">
-    <div class="map-section-layout">
-
-      <!-- LEFT: Text + stat callouts -->
-      <div class="map-text-col">
-        <h2>A nation of cafés.</h2>
-        <hr class="section-rule">
-        <p>Walk down almost any Australian high street and you will find one within minutes — a café, usually independent, often exceptional. With more than 55,000 cafés operating nationwide, Australia has quietly built one of the most café-dense societies in the world. But the numbers are not evenly spread.</p>
-
-        <div class="inline-stats">
-          <div class="inline-stat">
-            <span class="inline-stat-number">267</span>
-            <span class="inline-stat-label">cafés per 100k people<br><strong>Tasmania</strong> — national leader</span>
+    <section class="section-card">
+      <div class="map-section-layout">
+        <div class="map-text-col">
+          <h2>A nation of cafés.</h2>
+          <hr class="section-rule">
+          <p>Walk down almost any Australian high street and you will find one within minutes — a café, usually independent, often exceptional. With more than 55,000 cafés operating nationwide, Australia has quietly built one of the most café-dense societies in the world. But the numbers are not evenly spread.</p>
+          <div class="inline-stats">
+            <div class="inline-stat">
+              <span class="inline-stat-number">267</span>
+              <span class="inline-stat-label">cafés per 100k people<br><strong>Tasmania</strong> — national leader</span>
+            </div>
+            <div class="inline-stat">
+              <span class="inline-stat-number">60%</span>
+              <span class="inline-stat-label">of all cafés are in<br><strong>VIC or NSW</strong></span>
+            </div>
           </div>
-          <div class="inline-stat">
-            <span class="inline-stat-number">60%</span>
-            <span class="inline-stat-label">of all cafés are in<br><strong>VIC or NSW</strong></span>
-          </div>
+          <p>Victoria and New South Wales dominate by sheer volume, together accounting for nearly 60% of all cafés nationally. The Northern Territory sits at the other extreme — vast distances, sparse population, and limited café infrastructure make it an outlier in an otherwise café-saturated country.</p>
+          <p>The ACT, home to Canberra's public service culture, punches above its weight with a strong café presence relative to its size.</p>
+          <p class="insight">Tasmania quietly leads the country — its remote charm and tourism economy draw cafés in numbers that punch well above its small population.</p>
         </div>
-
-        <p>Victoria and New South Wales dominate by sheer volume, together accounting for nearly 60% of all cafés nationally. The Northern Territory sits at the other extreme — vast distances, sparse population, and limited café infrastructure make it an outlier in an otherwise café-saturated country.</p>
-        <p>The ACT, home to Canberra's public service culture, punches above its weight with a strong café presence relative to its size.</p>
-
-        <p class="insight">Tasmania quietly leads the country — its remote charm and tourism economy draw cafés in numbers that punch well above its small population.</p>
-      </div>
-
-      <!-- RIGHT: Map -->
-       <div class="map-chart-col">
-        <p class="chart-heading">Cafés per 100,000 People by Australian State</p>
-        <p class="chart-subheading">Tasmania leads on a per-capita basis, while NSW and VIC dominate by total count.</p>
-        <div class="chart" id="vis1"></div>
-      </div>
-      <div class="map-chart-col">
-        <div class="chart" id="vis1"></div>
-      </div>
-
-    </div>
-  </section>
-
-    <!-- 2 CHARTS: Growth + Revenue -->
-    <section class="section-card">
-      <div class="section-text">
-        <h2>Three decades of growth.</h2>
-        <hr class="section-rule">
-        <p>The café count has grown by nearly 30% since 2017 alone. But zoom out further and the story is even more striking — industry revenue has more than tripled since 2004, climbing from $2.1 billion to over $7 billion today. The only interruption was COVID-19, which caused a sharp dip in both café numbers and revenue in 2020.</p>
-        <p>Recovery was swift. By 2022 the industry had not only bounced back but accelerated past pre-pandemic levels, posting its strongest growth rate on record. The café is not just surviving in Australia — it is thriving.</p>
-      </div>
-      <div class="chart-row">
-        <div class="chart-block">
-          <div class="chart" id="vis2"></div>
-          <p class="chart-caption">Café numbers dipped sharply in 2020 but recovered faster than almost any other hospitality sector in Australia.</p>
-        </div>
-        <div class="chart-block">
-          <div class="chart" id="vis6"></div>
-          <p class="chart-caption">Revenue growth has been near-continuous since 2004 — the 2020 dip is brief against a 20-year upward trend.</p>
+        <div class="map-chart-col">
+          <p class="chart-heading">Cafés per 100,000 People by Australian State</p>
+          <p class="chart-subheading">Tasmania leads on a per-capita basis, while NSW and VIC dominate by total count.</p>
+          <div class="chart" id="vis1"></div>
         </div>
       </div>
-      <p class="insight">From a COVID low to record revenues — the industry didn't just survive the pandemic, it came back stronger than before.</p>
-    </section>
-
-    <!-- 2 CHARTS: Preferences + Price -->
-    <section class="section-card">
-      <div class="section-text">
-        <h2>A distinctive taste — at a price.</h2>
-        <hr class="section-rule">
-        <p>Ask an Australian what coffee they drink and the answer is almost certainly milk-based. The latte and flat white together account for more than half of all coffee sold nationally. Espresso purists exist, but they are in the minority — cold brew and long blacks together barely reach 18% of orders.</p>
-        <p>What you pay depends heavily on where you are. Sydney leads the country for price with a flat white averaging $5.50 — around a dollar more than the same drink in Hobart. Canberra, often overlooked in coffee conversations, quietly charges more than Melbourne.</p>
-      </div>
-      <div class="chart-row">
-        <div class="chart-block">
-          <div class="chart" id="vis3"></div>
-          <p class="chart-caption">Latte and flat white together make up over half of all coffee orders — Australia's preference for milk-based drinks sets it apart from European café culture.</p>
-        </div>
-        <div class="chart-block">
-          <div class="chart" id="vis4"></div>
-          <p class="chart-caption">Sydney leads on price while Hobart remains the most affordable — a $1 gap that reflects broader cost-of-living differences across Australian cities.</p>
-        </div>
-      </div>
-      <p class="insight">Australians are loyal to their milk-based orders — and increasingly willing to pay a premium for them.</p>
-    </section>
-
-    <!-- ===================== CHAPTER 2 ===================== -->
-    <div class="chapter-label" id="ch2">Chapter 02 · The Cup</div>
-
-    <!-- 2 CHARTS: Demographics + Hourly -->
-    <section class="section-card">
-      <div class="section-text">
-        <h2>Every generation drinks.</h2>
-        <hr class="section-rule">
-        <p>Coffee in Australia is not the preserve of any one generation. The 25–34 age group leads with 72% drinking daily, but the habit is almost universal — even among Australians over 65, more than half drink coffee every single day. This is not a youth trend. It is a national ritual that spans decades of life.</p>
-        <p>And the timing is predictable. The morning rush between 7am and 10am dominates café visits, with a smaller but consistent bump around lunchtime. The afternoon and evening are quiet — Australians drink their coffee early, and they drink it often.</p>
-      </div>
-      <div class="chart-row">
-        <div class="chart-block">
-          <div class="chart" id="vis8"></div>
-          <p class="chart-caption">Daily coffee drinking is highest among 25–34 year olds but remains above 50% for every age group — including Australians over 65.</p>
-        </div>
-        <div class="chart-block">
-          <div class="chart" id="vis9"></div>
-          <p class="chart-caption">The 7–10am window accounts for the vast majority of café visits — Australia's café culture is fundamentally a morning ritual.</p>
-        </div>
-      </div>
-      <p class="insight">Coffee is a generational constant — not a trend. Every age group drinks it, every morning, without exception.</p>
-    </section>
-
-    <!-- 2 CHARTS: Import Origins + Daily Cups -->
-    <section class="section-card">
-      <div class="section-text">
-        <h2>16 million cups, every day.</h2>
-        <hr class="section-rule">
-        <p>Australians consumed 16.3 million cups of coffee every single day in 2024 — up from 13.1 million a decade earlier. That sustained growth reflects a culture that has made coffee genuinely inseparable from daily life: a social ritual, a workplace staple, and an afternoon indulgence.</p>
-        <p>The beans for those 16 million cups travel a long way. Brazil alone supplies nearly a third of all Australian coffee imports. Vietnam and Colombia follow closely, and together the top three countries account for almost two thirds of supply. Papua New Guinea — Australia's closest coffee-growing neighbour — contributes a modest but notable 8%.</p>
-      </div>
-      <div class="chart-row">
-        <div class="chart-block">
-          <div class="chart" id="vis7"></div>
-          <p class="chart-caption">Brazil, Vietnam, and Colombia together supply almost two thirds of Australia's coffee imports — a global supply chain for a deeply local ritual.</p>
-        </div>
-        <div class="chart-block">
-          <div class="chart" id="vis_cups"></div>
-          <p class="chart-caption">Daily cups consumed have risen steadily from 13.1 million in 2015 to 16.3 million in 2024 — the only dip came during COVID lockdowns in 2020.</p>
-        </div>
-      </div>
-      <p class="insight">16.3 million cups a day — and rising. Australia's appetite for coffee shows no sign of slowing.</p>
-    </section>
-
-    <!-- ===================== CHAPTER 3 ===================== -->
-    <div class="chapter-label" id="ch3">Chapter 03 · The Capital</div>
-
-    <!-- MAP 2: Melbourne CLUE map full width -->
-    <section class="section-card">
-      <div class="section-text">
-        <h2>Inside the world's café capital.</h2>
-        <hr class="section-rule">
-        <p>Melbourne's café culture did not happen by accident. It was built over decades by waves of Italian and Greek immigrants who arrived after World War II, bringing with them espresso machines, a reverence for quality coffee, and a belief that the café was a place for community — not just caffeine. Today that legacy is embedded in the city's identity.</p>
-        <p>The CBD alone hosts 735 cafés and restaurants — more than half the inner city's total. But the culture radiates outward: Carlton, Fitzroy, Southbank, and Docklands each carry significant concentrations of their own. The map below shows café and restaurant density across Melbourne's 13 inner-city CLUE zones.</p>
-      </div>
-      <div class="chart" id="vis10"></div>
-      <p class="insight">Melbourne's CBD hosts more cafés per square kilometre than almost any other urban zone in the world — a density built over 70 years of coffee culture.</p>
-    </section>
-
-    <!-- 2 CHARTS: Melbourne vs World + Pull quote -->
-    <section class="section-card">
-      <div class="section-text">
-        <h2>Melbourne vs the world.</h2>
-        <hr class="section-rule">
-        <p>When measured by cafés per 100,000 people, Melbourne does not just lead Australia — it leads the world. With 315 cafés per 100,000 people, it outranks Vienna, Rome, Paris, and every other city known for its café tradition. Sydney, its closest Australian rival, does not come close.</p>
-        <p>The comparison is striking because the cities Melbourne outranks are not afterthoughts. Vienna's coffeehouse culture is UNESCO-listed. Rome's espresso bars are centuries old. Paris practically invented the street café. Melbourne beat them all — in under a century — built on immigration, independence, and a culture that treats coffee as craft.</p>
-      </div>
-      <div class="chart-row">
-        <div class="chart-block">
-          <div class="chart" id="vis5"></div>
-          <p class="chart-caption">Melbourne leads every global city for café density — outranking Vienna, Rome, and Paris by a significant margin.</p>
-        </div>
-        <div class="chart-block">
-          <div class="pull-quote-block">
-            <span class="pull-number">315</span>
-            <span class="pull-label">cafés per 100,000 people</span>
-            <span class="pull-divider"></span>
-            <span class="pull-sub">Melbourne ranks #1 in the world for café density — ahead of Vienna, Rome, Paris, and Tokyo.</span>
-          </div>
-        </div>
-      </div>
-      <p class="insight">Vienna's coffeehouse culture is UNESCO-listed. Rome's espresso bars are centuries old. Melbourne beat them both — in under a hundred years.</p>
     </section>
 
   </div>
@@ -230,17 +90,7 @@
     const baseURL = "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/vega/";
 
     const charts = [
-      { id: "#vis1",     spec: "01_cafes_by_state_map.json" },
-      { id: "#vis2",     spec: "02_cafe_growth_line.json" },
-      { id: "#vis3",     spec: "03_coffee_preferences_donut.json" },
-      { id: "#vis4",     spec: "04_flat_white_price_bar.json" },
-      { id: "#vis5",     spec: "05_melbourne_vs_world_bar.json" },
-      { id: "#vis6",     spec: "06_industry_revenue_combo.json" },
-      { id: "#vis7",     spec: "07_import_origins_lollipop.json" },
-      { id: "#vis8",     spec: "08_demographics_waffle.json" },
-      { id: "#vis9",     spec: "09_cafe_hourly_radial.json" },
-      { id: "#vis10",    spec: "10_melbourne_clue_map.json" },
-      { id: "#vis_cups", spec: "09_daily_cups.json" }
+      { id: "#vis1", spec: "01_cafes_by_state_map.json" }
     ];
 
     charts.forEach(c => {
