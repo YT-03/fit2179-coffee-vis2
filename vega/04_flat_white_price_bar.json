@@ -52,7 +52,7 @@
       }
     },
     {
-      "mark": {"type": "text", "align": "left", "dx": 5, "dy": 0, "fontSize": 11, "fontWeight": "bold", "font": "Helvetica, sans-serif", "color": "#2E6EA6"},
+      "mark": {"type": "text", "align": "left", "dx": 5, "dy": 14, "fontSize": 11, "fontWeight": "bold", "font": "Helvetica, sans-serif", "color": "#2E6EA6"},
       "data": {"values": [{"avg": 4.93, "city": "Hobart", "label": "Nat. avg: $4.93"}]},
       "encoding": {
         "x": {"field": "avg", "type": "quantitative"},
