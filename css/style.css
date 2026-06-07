@@ -405,7 +405,6 @@ footer a:hover { text-decoration: underline; }
 #vis1 svg {
   display: block;
   margin: 0 !important;
-  max-width: 100%;
 }
 
 /* ---------- Inline Stat Callouts ---------- */
