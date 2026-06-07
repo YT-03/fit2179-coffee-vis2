@@ -30,7 +30,10 @@
         "titleFontWeight": "bold",
         "labelColor": "#3C2415",
         "labelFont": "Helvetica, sans-serif",
-        "labelFontSize": 11
+        "labelFontSize": 11,
+        "orient": "bottom",
+        "direction": "horizontal",
+        "columns": 4
       }
     }
   },

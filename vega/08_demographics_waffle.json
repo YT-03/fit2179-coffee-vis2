@@ -43,10 +43,7 @@
         "color": {
           "field": "Daily_Drinkers_Percent",
           "type": "quantitative",
-          "scale": {
-            "domain": [50, 75],
-            "range": ["#C49B7D", "#3C2415"]
-          },
+          "scale": {"domain": [50, 75], "range": ["#C49B7D", "#3C2415"]},
           "legend": null
         },
         "tooltip": [
@@ -73,20 +70,11 @@
           "sort": ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"]
         },
         "x": {"field": "Daily_Drinkers_Percent", "type": "quantitative"},
-        "text": {
-          "field": "Daily_Drinkers_Percent",
-          "type": "quantitative",
-          "format": ".0f"
-        }
+        "text": {"field": "Daily_Drinkers_Percent", "type": "quantitative", "format": ".0f"}
       }
     },
     {
-      "mark": {
-        "type": "rule",
-        "strokeDash": [5, 4],
-        "color": "#8B5A3C",
-        "strokeWidth": 2
-      },
+      "mark": {"type": "rule", "strokeDash": [6, 4], "color": "#8B5A3C", "strokeWidth": 2},
       "data": {"values": [{"avg": 66}]},
       "encoding": {
         "x": {"field": "avg", "type": "quantitative"}
@@ -96,17 +84,18 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 4,
-        "dy": -8,
+        "dx": 5,
+        "dy": 0,
         "fontSize": 11,
         "fontStyle": "italic",
         "fontWeight": "bold",
         "font": "Helvetica, sans-serif",
         "color": "#8B5A3C"
       },
-      "data": {"values": [{"avg": 66, "label": "National avg: 66%"}]},
+      "data": {"values": [{"avg": 66, "age": "18-24", "label": "National avg: 66%"}]},
       "encoding": {
         "x": {"field": "avg", "type": "quantitative"},
+        "y": {"field": "age", "type": "nominal", "sort": ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"]},
         "text": {"field": "label", "type": "nominal"}
       }
     }
