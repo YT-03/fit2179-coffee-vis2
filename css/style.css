@@ -439,3 +439,18 @@ footer a:hover { text-decoration: underline; }
   .map-section-layout { grid-template-columns: 1fr; }
   .inline-stats { flex-direction: column; }
 }
+
+.chart-heading {
+  font-family: 'Georgia', serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--coffee-dark);
+  margin: 0 0 4px;
+}
+
+.chart-subheading {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 0.82em;
+  color: var(--coffee-medium);
+  margin: 0 0 8px;
+}

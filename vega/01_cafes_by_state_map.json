@@ -1,17 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "title": {
-    "text": "Cafés per 100,000 People by Australian State",
-    "subtitle": "Tasmania leads on a per-capita basis, while NSW and VIC dominate by total count.",
-    "fontSize": 15,
-    "subtitleFontSize": 12,
-    "color": "#3C2415",
-    "subtitleColor": "#6F4E37",
-    "font": "Georgia, serif",
-    "subtitleFont": "Georgia, serif",
-    "anchor": "start"
-  },
   "width": 600,
   "height": 450,
   "projection": { "type": "equirectangular", "center": [134, -28], "scale": 700 },
