@@ -11,8 +11,8 @@
   --coffee-foam:   #FFF3E0;
   --text-primary:  #2C1A0E;
   --text-secondary:#5D4037;
-  --bg-page:       #EDE4D8;
-  --bg-card:       #F5EDE2;
+  --bg-page:       #EDE0CE;
+  --bg-card:       #EDE4D8;
   --accent:        #8B5A3C;
 }
 
@@ -230,7 +230,6 @@ header {
   color: var(--text-secondary);
   font-size: 1.05em;
   margin: 20px 0 0;
-  max-width: 860px;
 }
 
 /* ---------- Chart containers ---------- */
