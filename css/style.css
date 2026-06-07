@@ -218,7 +218,7 @@ header {
 }
 
 .section-card {
-  background: #EDE0CE;
+  background: var(--bg-card);
   border-radius: 10px;
   padding: 36px 48px;
   margin-bottom: 28px;
