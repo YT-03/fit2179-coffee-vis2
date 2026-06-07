@@ -6,19 +6,9 @@
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafes_by_state.csv"
   },
-  "transform": [
-    {
-      "calculate": "datum.State === 'NSW' ? 18 : datum.State === 'VIC' ? -20 : -16",
-      "as": "lbl_dy"
-    },
-    {
-      "calculate": "datum.State === 'NSW' ? -8 : 0",
-      "as": "lbl_dx"
-    }
-  ],
   "layer": [
     {
-      "mark": {"type": "point", "filled": true, "opacity": 0.88, "stroke": "white", "strokeWidth": 1.5},
+      "mark": {"type": "point", "filled": true, "opacity": 0.9, "stroke": "white", "strokeWidth": 1.5},
       "encoding": {
         "x": {
           "field": "Population_M",
@@ -69,21 +59,21 @@
       }
     },
     {
-      "mark": {"type": "text", "fontSize": 12, "fontWeight": "bold", "font": "Helvetica, sans-serif"},
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "font": "Helvetica, sans-serif",
+        "baseline": "middle",
+        "align": "center",
+        "color": "white",
+        "stroke": "#3C2415",
+        "strokeWidth": 2.5
+      },
       "encoding": {
         "x": {"field": "Population_M", "type": "quantitative"},
         "y": {"field": "Cafes_per_100k", "type": "quantitative"},
-        "text": {"field": "State", "type": "nominal"},
-        "dy": {"field": "lbl_dy", "type": "quantitative"},
-        "dx": {"field": "lbl_dx", "type": "quantitative"},
-        "color": {
-          "field": "State",
-          "type": "nominal",
-          "scale": {
-            "domain": ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"],
-            "range": ["#3C2415", "#3C2415", "#6F4E37", "#6F4E37", "#8B5A3C", "#8B5A3C", "#3C2415", "#888"]
-          }
-        }
+        "text": {"field": "State", "type": "nominal"}
       }
     }
   ],
