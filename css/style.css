@@ -170,13 +170,18 @@ header {
 /* ---------- Chapter Labels ---------- */
 .chapter-label {
   font-family: 'Helvetica', sans-serif;
-  font-size: 0.78em;
+  font-size: 1.4em;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--coffee-medium);
-  padding: 40px 0 12px;
-  border-bottom: 1px solid var(--coffee-light);
-  margin-bottom: 24px;
+  letter-spacing: 4px;
+  color: #FFF3E0;
+  background: var(--coffee-brown);
+  padding: 20px 32px;
+  border-radius: 0;
+  margin: 48px 0 24px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ---------- Layout ---------- */
@@ -212,11 +217,13 @@ header {
   margin: 0 0 20px;
 }
 
-.section-card p {
-  color: var(--text-secondary);
-  font-size: 1.05em;
-  margin: 0 0 14px;
-  max-width: 860px;
+.section-card {
+  background: #EDE0CE;
+  border-radius: 10px;
+  padding: 36px 48px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 16px rgba(60, 36, 21, 0.10), 0 1px 4px rgba(60, 36, 21, 0.06);
+  border: 1px solid rgba(180, 140, 100, 0.15);
 }
 
 .section-below {
@@ -228,7 +235,7 @@ header {
 
 /* ---------- Chart containers ---------- */
 .chart {
-  margin: 16px 0;
+  margin: 8px 0;
   width: 100%;
   overflow-x: auto;
 }
