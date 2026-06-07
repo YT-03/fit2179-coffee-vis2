@@ -78,11 +78,13 @@ header {
 
 .nav-label {
   font-family: 'Helvetica', sans-serif;
-  font-size: 0.72em;
+  font-size: 0.82em;
   text-transform: uppercase;
   letter-spacing: 2px;
-  opacity: 0.5;
+  opacity: 1;
+  color: var(--coffee-cream);
   margin: 0;
+  font-weight: 600;
 }
 
 .header-nav {
