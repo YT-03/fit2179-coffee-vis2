@@ -220,22 +220,58 @@
       <p class="insight">&#9749; Melbourne's café culture was forged by immigration and honed by decades of local passion — the result is a café-per-person rate that no other major city on earth has matched.</p>
     </section>
 
-    <!-- Section: Demographics waffle + Hourly radial -->
+    <!-- Section: Demographics waffle -->
     <section class="section-card">
-      <h2>Who drinks, and when.</h2>
-      <hr class="section-rule">
-      <p>Coffee drinking in Australia crosses generational lines — but not equally. Australians aged 25–44 show the highest rates of daily consumption, typically driven by professional routines, workplace culture, and the social fabric of the morning commute. Older Australians follow closely. As for timing: the morning window from 7 to 10 am drives the overwhelming majority of café visits, with a secondary lunch-hour bump rounding out the day.</p>
-      <div class="chart-row">
-        <div class="chart-block">
-          <div class="chart" id="vis8"></div>
-          <p class="chart-caption">Source: YouGov Australia, 2024. Each row represents 10 people. Filled cups (&#9749;) indicate daily drinkers; unfilled indicate non-daily drinkers in that age group.</p>
+      <div class="map-section-layout">
+        <div class="map-text-col">
+          <h2>Who drinks?</h2>
+          <hr class="section-rule">
+          <p>Coffee drinking in Australia crosses generational lines — but not equally. Australians aged 25–44 show the highest rates of daily consumption, driven by professional routines and the ritual of the morning commute. Older Australians follow closely behind.</p>
+          <p>Each row below represents 10 people from that age group. Dark circles are daily coffee drinkers; light circles are not. Even among those aged 65 and over, the majority still drink coffee every single day.</p>
+          <div class="inline-stats">
+            <div class="inline-stat">
+              <span class="inline-stat-number">72%</span>
+              <span class="inline-stat-label">of Australians aged<br><strong>25–34</strong> drink daily</span>
+            </div>
+            <div class="inline-stat">
+              <span class="inline-stat-number">55%</span>
+              <span class="inline-stat-label">of Australians aged<br><strong>65+</strong> drink daily</span>
+            </div>
+          </div>
+          <p class="chart-caption">Source: YouGov Australia Coffee Consumption Survey, 2024.</p>
         </div>
-        <div class="chart-block">
-          <div class="chart" id="vis9"></div>
-          <p class="chart-caption">Source: Square Australia POS Traffic Data, 2024. Visit index is normalised to peak hour (9 am = 100). Each arc segment represents one hour of the day.</p>
+        <div class="map-chart-col">
+          <div class="chart" id="vis8"></div>
         </div>
       </div>
-      <p class="insight">&#9749; The 7–9 am window defines the Australian café economy — baristas pull more shots in those three hours than in the rest of the day combined. The lunch bump is real, but it never rivals the morning ritual.</p>
+      <p class="insight">&#9749; Even among older Australians, the majority are daily drinkers — coffee has become a habit that transcends generation, with the 25–34 age group leading at 72%.</p>
+    </section>
+
+    <!-- Section: Hourly radial -->
+    <section class="section-card">
+      <div class="map-section-layout">
+        <div class="map-text-col">
+          <h2>When do they go?</h2>
+          <hr class="section-rule">
+          <p>The café clock tells a very clear story. The morning rush between 7 and 10 am dominates daily café traffic — a concentrated surge driven by the pre-work ritual that defines Australian café culture. A secondary lunch bump at midday adds a modest second peak, but nothing rivals the morning.</p>
+          <p>On the radial chart, each wedge represents one hour of the day. The longer the wedge, the more café visits occur in that hour. Hours outside the morning and lunch windows are shown in gold — revealing just how quiet afternoons and evenings are by comparison.</p>
+          <div class="inline-stats">
+            <div class="inline-stat">
+              <span class="inline-stat-number">9 am</span>
+              <span class="inline-stat-label">peak café hour<br><strong>nationwide</strong></span>
+            </div>
+            <div class="inline-stat">
+              <span class="inline-stat-number">3 hrs</span>
+              <span class="inline-stat-label">morning rush drives<br><strong>most daily visits</strong></span>
+            </div>
+          </div>
+          <p class="chart-caption">Source: Square Australia POS Traffic Data, 2024. Visit index normalised to peak hour (9 am = 100).</p>
+        </div>
+        <div class="map-chart-col">
+          <div class="chart" id="vis9"></div>
+        </div>
+      </div>
+      <p class="insight">&#9749; The 7–9 am window defines the Australian café economy — baristas pull more shots in those three hours than in the rest of the day combined.</p>
     </section>
 
   </div><!-- end .container -->

@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Coffee Through the Generations",
-    "subtitle": "Each row = 10 people. Filled cups show daily drinkers. Unfilled show non-daily drinkers.",
+    "subtitle": "Each row = 10 people. Dark circles = daily drinkers. Light circles = non-daily drinkers.",
     "fontSize": 15,
     "subtitleFontSize": 11,
     "anchor": "start",
@@ -11,8 +11,9 @@
     "font": "Georgia, serif",
     "subtitleFont": "Helvetica, sans-serif"
   },
-  "width": 340,
-  "height": 300,
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "width": 480,
+  "height": 320,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/demographics_waffle.csv"
   },
@@ -28,7 +29,7 @@
       }
     }
   ],
-  "mark": {"type": "text", "fontSize": 28, "baseline": "middle"},
+  "mark": {"type": "circle", "opacity": 0.9},
   "encoding": {
     "x": {
       "field": "cup",
@@ -44,17 +45,25 @@
         "labelFontSize": 13,
         "labelColor": "#3C2415",
         "labelFont": "Helvetica, sans-serif",
-        "labelPadding": 10,
+        "labelPadding": 12,
         "ticks": false,
         "domain": false
       }
     },
-    "text": {"value": "☕"},
+    "size": {"value": 280},
     "color": {
       "field": "filled",
       "type": "nominal",
       "scale": {"domain": [1, 0], "range": ["#6F4E37", "#DDD0BC"]},
-      "legend": null
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "direction": "horizontal",
+        "labelExpr": "datum.value === '1' ? 'Daily drinker' : 'Non-daily drinker'",
+        "labelColor": "#3C2415",
+        "labelFont": "Helvetica, sans-serif",
+        "labelFontSize": 11
+      }
     },
     "tooltip": [
       {"field": "Age_Group", "type": "nominal", "title": "Age group"},
