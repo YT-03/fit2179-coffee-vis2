@@ -82,6 +82,8 @@ header {
   color: var(--coffee-cream);
   margin: 0;
   font-weight: 600;
+  width: 180px;
+  text-align: center;
 }
 
 .header-nav {

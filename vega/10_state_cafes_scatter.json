@@ -6,6 +6,12 @@
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafes_by_state.csv"
   },
+  "transform": [
+    {
+      "calculate": "-1 * (sqrt((80 + (datum.Cafes - 300) / 15900 * 1920) / 3.14159) + 10)",
+      "as": "lbl_dy"
+    }
+  ],
   "layer": [
     {
       "mark": {"type": "point", "filled": true, "opacity": 0.9, "stroke": "white", "strokeWidth": 1.5},
@@ -64,15 +70,14 @@
         "fontSize": 11,
         "fontWeight": "bold",
         "font": "Helvetica, sans-serif",
-        "baseline": "middle",
+        "baseline": "bottom",
         "align": "center",
-        "color": "white",
-        "stroke": "#3C2415",
-        "strokeWidth": 2.5
+        "color": "#3C2415"
       },
       "encoding": {
         "x": {"field": "Population_M", "type": "quantitative"},
         "y": {"field": "Cafes_per_100k", "type": "quantitative"},
+        "dy": {"field": "lbl_dy", "type": "quantitative"},
         "text": {"field": "State", "type": "nominal"}
       }
     }
