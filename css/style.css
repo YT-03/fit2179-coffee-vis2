@@ -119,13 +119,13 @@ header {
 /* ---------- Chapter Labels ---------- */
 .chapter-label {
   font-family: 'Helvetica', sans-serif;
-  font-size: 1.1em;
+  font-size: 1.4em;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   color: var(--coffee-foam);
   background: var(--coffee-brown);
-  padding: 16px 32px;
+  padding: 20px 32px;
   border-radius: 6px;
   margin: 48px 0 24px;
   display: block;
@@ -216,6 +216,13 @@ header {
   color: var(--text-secondary);
   font-size: 1.05em;
   margin: 0 0 14px;
+  max-width: 860px;
+}
+
+.section-below {
+  color: var(--text-secondary);
+  font-size: 1.05em;
+  margin: 20px 0 0;
   max-width: 860px;
 }
 
