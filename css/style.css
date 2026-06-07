@@ -239,11 +239,6 @@ header {
   overflow-x: auto;
 }
 
-#vis1 svg, #vis10 svg {
-  display: block;
-  margin: 0 auto !important;
-}
-
 /* Two-column layout */
 .chart-row {
   display: grid;
