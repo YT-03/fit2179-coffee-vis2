@@ -11,7 +11,7 @@
   },
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": 600,
-  "height": 340,
+  "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafe_growth.csv"
   },

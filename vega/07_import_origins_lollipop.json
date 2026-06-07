@@ -12,26 +12,42 @@
     "subtitleFont": "Helvetica, sans-serif"
   },
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": 460,
-  "height": 300,
+  "width": 520,
+  "height": 360,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/import_origins.csv"
   },
-  "transform": [
-    {"calculate": "datum.Country === 'Brazil' ? 'Brazil' : 'Other'", "as": "is_brazil"}
-  ],
   "encoding": {
     "y": {
       "field": "Country",
       "type": "nominal",
       "sort": ["Brazil", "Vietnam", "Colombia", "Ethiopia", "Indonesia", "Papua New Guinea", "Other"],
       "title": null,
-      "axis": {"labelFontSize": 12, "labelColor": "#3C2415", "labelFont": "Helvetica, sans-serif", "ticks": false, "domain": false}
+      "axis": {"labelFontSize": 13, "labelColor": "#3C2415", "labelFont": "Helvetica, sans-serif", "ticks": false, "domain": false}
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Brazil", "Vietnam", "Colombia", "Ethiopia", "Indonesia", "Papua New Guinea", "Other"],
+        "range": ["#8B2500", "#3A7D52", "#D4860A", "#8B4513", "#2E6EA6", "#7B4FA0", "#888888"]
+      },
+      "legend": {
+        "title": "Country",
+        "orient": "right",
+        "titleColor": "#3C2415",
+        "titleFont": "Georgia, serif",
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
+        "labelColor": "#3C2415",
+        "labelFont": "Helvetica, sans-serif",
+        "labelFontSize": 11
+      }
     }
   },
   "layer": [
     {
-      "mark": {"type": "rule", "strokeWidth": 2},
+      "mark": {"type": "rule", "strokeWidth": 3},
       "encoding": {
         "x": {
           "field": "Share_Percent",
@@ -40,31 +56,13 @@
           "scale": {"domain": [0, 38]},
           "axis": {"grid": true, "gridColor": "#f0e0cc", "labelFontSize": 11, "titleFontSize": 12, "labelColor": "#3C2415", "titleColor": "#3C2415", "labelFont": "Helvetica, sans-serif"}
         },
-        "x2": {"datum": 0},
-        "color": {
-          "field": "is_brazil",
-          "type": "nominal",
-          "scale": {"domain": ["Brazil", "Other"], "range": ["#6F4E37", "#C49B7D"]},
-          "legend": null
-        }
+        "x2": {"datum": 0}
       }
     },
     {
-      "mark": {"type": "circle", "opacity": 0.9},
+      "mark": {"type": "circle", "opacity": 1, "size": 220},
       "encoding": {
         "x": {"field": "Share_Percent", "type": "quantitative"},
-        "size": {
-          "field": "Share_Percent",
-          "type": "quantitative",
-          "scale": {"range": [200, 1200]},
-          "legend": null
-        },
-        "color": {
-          "field": "is_brazil",
-          "type": "nominal",
-          "scale": {"domain": ["Brazil", "Other"], "range": ["#6F4E37", "#C49B7D"]},
-          "legend": null
-        },
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Country"},
           {"field": "Share_Percent", "type": "quantitative", "title": "Share (%)"}
@@ -76,8 +74,8 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 18,
-        "fontSize": 11,
+        "dx": 14,
+        "fontSize": 12,
         "fontWeight": "bold",
         "color": "#3C2415",
         "font": "Helvetica, sans-serif"

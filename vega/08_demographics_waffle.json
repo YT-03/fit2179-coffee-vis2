@@ -12,8 +12,8 @@
     "subtitleFont": "Helvetica, sans-serif"
   },
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": 480,
-  "height": 320,
+  "width": 560,
+  "height": 380,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/demographics_waffle.csv"
   },
@@ -29,7 +29,7 @@
       }
     }
   ],
-  "mark": {"type": "circle", "opacity": 0.9},
+  "mark": {"type": "circle", "opacity": 0.92},
   "encoding": {
     "x": {
       "field": "cup",
@@ -42,15 +42,15 @@
       "sort": ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"],
       "title": null,
       "axis": {
-        "labelFontSize": 13,
+        "labelFontSize": 14,
         "labelColor": "#3C2415",
         "labelFont": "Helvetica, sans-serif",
-        "labelPadding": 12,
+        "labelPadding": 16,
         "ticks": false,
         "domain": false
       }
     },
-    "size": {"value": 280},
+    "size": {"value": 420},
     "color": {
       "field": "filled",
       "type": "nominal",
@@ -59,10 +59,11 @@
         "title": null,
         "orient": "bottom",
         "direction": "horizontal",
-        "labelExpr": "datum.value === '1' ? 'Daily drinker' : 'Non-daily drinker'",
+        "labelExpr": "datum.value === '1' ? 'Daily coffee drinker' : 'Non-daily drinker'",
         "labelColor": "#3C2415",
         "labelFont": "Helvetica, sans-serif",
-        "labelFontSize": 11
+        "labelFontSize": 12,
+        "symbolSize": 150
       }
     },
     "tooltip": [

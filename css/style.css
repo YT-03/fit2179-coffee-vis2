@@ -445,6 +445,24 @@ footer a:hover { text-decoration: underline; }
   overflow: hidden;
 }
 
+/* ---------- Centered chart variant ---------- */
+.chart--center {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Centered chart-row ---------- */
+.chart-row--centered {
+  align-items: center;
+}
+
+/* ---------- Equal-height chart blocks ---------- */
+.chart-row--centered .chart-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
   .chart-row { grid-template-columns: 1fr; }
