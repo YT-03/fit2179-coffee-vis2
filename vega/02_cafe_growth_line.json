@@ -56,10 +56,10 @@
         "align": "left",
         "dx": 6,
         "dy": -100,
-        "fontSize": 10,
-        "fontStyle": "italic",
+        "fontSize": 13,
+        "fontStyle": "normal",
         "fontWeight": "bold",
-        "color": "#A0785A"
+        "color": "#E04A00"
       },
       "data": {"values": [{"yr": "2020", "label": "↓ COVID-19 dip"}]},
       "encoding": {
