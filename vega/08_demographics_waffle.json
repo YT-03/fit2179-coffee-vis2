@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Coffee Through the Generations",
-    "subtitle": "Each row = 10 people. Dark circles = daily drinkers. Light circles = non-daily drinkers.",
+    "text": "Daily Coffee Drinkers by Age Group",
+    "subtitle": "Percentage of Australians who drink coffee every day, by generation.",
     "fontSize": 15,
     "subtitleFontSize": 11,
     "anchor": "start",
@@ -12,65 +12,116 @@
     "subtitleFont": "Helvetica, sans-serif"
   },
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": 560,
-  "height": 380,
+  "width": 520,
+  "height": 320,
   "data": {
-    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/demographics_waffle.csv"
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/consumer_demographics.csv"
   },
-  "transform": [
+  "layer": [
     {
-      "lookup": "Age_Group",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/consumer_demographics.csv"
+      "mark": {"type": "bar", "cornerRadiusEnd": 5},
+      "encoding": {
+        "y": {
+          "field": "Age_Group",
+          "type": "nominal",
+          "sort": ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"],
+          "title": "Age group",
+          "axis": {
+            "labelFontSize": 13,
+            "labelColor": "#3C2415",
+            "labelFont": "Helvetica, sans-serif",
+            "titleFontSize": 12,
+            "titleColor": "#3C2415",
+            "ticks": false,
+            "domain": false
+          }
         },
-        "key": "Age_Group",
-        "fields": ["Daily_Drinkers_Percent"]
+        "x": {
+          "field": "Daily_Drinkers_Percent",
+          "type": "quantitative",
+          "title": "Daily drinkers (%)",
+          "scale": {"domain": [0, 85]},
+          "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "labelColor": "#3C2415",
+            "titleColor": "#3C2415",
+            "labelFont": "Helvetica, sans-serif",
+            "grid": true,
+            "gridColor": "#f0e0cc"
+          }
+        },
+        "color": {
+          "field": "Daily_Drinkers_Percent",
+          "type": "quantitative",
+          "scale": {
+            "domain": [50, 75],
+            "range": ["#C49B7D", "#3C2415"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "Age_Group", "type": "nominal", "title": "Age group"},
+          {"field": "Daily_Drinkers_Percent", "type": "quantitative", "title": "Daily drinkers (%)"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 6,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "font": "Helvetica, sans-serif",
+        "color": "#3C2415"
+      },
+      "encoding": {
+        "y": {
+          "field": "Age_Group",
+          "type": "nominal",
+          "sort": ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"]
+        },
+        "x": {"field": "Daily_Drinkers_Percent", "type": "quantitative"},
+        "text": {
+          "field": "Daily_Drinkers_Percent",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeDash": [5, 4],
+        "color": "#8B5A3C",
+        "strokeWidth": 2
+      },
+      "data": {"values": [{"avg": 66}]},
+      "encoding": {
+        "x": {"field": "avg", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "dy": -8,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+        "font": "Helvetica, sans-serif",
+        "color": "#8B5A3C"
+      },
+      "data": {"values": [{"avg": 66, "label": "National avg: 66%"}]},
+      "encoding": {
+        "x": {"field": "avg", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
       }
     }
   ],
-  "mark": {"type": "circle", "opacity": 0.92},
-  "encoding": {
-    "x": {
-      "field": "cup",
-      "type": "ordinal",
-      "axis": null
-    },
-    "y": {
-      "field": "Age_Group",
-      "type": "nominal",
-      "sort": ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"],
-      "title": null,
-      "axis": {
-        "labelFontSize": 14,
-        "labelColor": "#3C2415",
-        "labelFont": "Helvetica, sans-serif",
-        "labelPadding": 16,
-        "ticks": false,
-        "domain": false
-      }
-    },
-    "size": {"value": 420},
-    "color": {
-      "field": "filled",
-      "type": "nominal",
-      "scale": {"domain": [1, 0], "range": ["#6F4E37", "#DDD0BC"]},
-      "legend": {
-        "title": null,
-        "orient": "bottom",
-        "direction": "horizontal",
-        "labelExpr": "datum.value === '1' ? 'Daily coffee drinker' : 'Non-daily drinker'",
-        "labelColor": "#3C2415",
-        "labelFont": "Helvetica, sans-serif",
-        "labelFontSize": 12,
-        "symbolSize": 150
-      }
-    },
-    "tooltip": [
-      {"field": "Age_Group", "type": "nominal", "title": "Age group"},
-      {"field": "Daily_Drinkers_Percent", "type": "quantitative", "title": "Daily drinkers (%)"}
-    ]
-  },
   "config": {
     "background": "transparent",
     "view": {"stroke": "transparent"},
