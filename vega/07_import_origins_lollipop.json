@@ -76,6 +76,28 @@
         "x": {"field": "Share_Percent", "type": "quantitative"},
         "text": {"field": "Share_Percent", "type": "quantitative", "format": ".0f"}
       }
+    },
+    {
+      "transform": [{"filter": "datum.Country === 'Brazil'"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dy": -12,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "font": "Helvetica, sans-serif",
+        "color": "#8B2500"
+      },
+      "encoding": {
+        "x": {"datum": 0},
+        "y": {
+          "field": "Country",
+          "type": "nominal",
+          "sort": ["Brazil", "Vietnam", "Colombia", "Ethiopia", "Indonesia", "Papua New Guinea", "Other"]
+        },
+        "text": {"value": "★ World's largest coffee exporter"}
+      }
     }
   ],
   "config": {

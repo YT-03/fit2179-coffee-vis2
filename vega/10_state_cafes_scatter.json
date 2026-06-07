@@ -74,6 +74,37 @@
         "y": {"field": "Cafes_per_100k", "type": "quantitative"},
         "text": {"field": "State", "type": "nominal"}
       }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeDash": [6, 4],
+        "color": "#2E6EA6",
+        "strokeWidth": 2
+      },
+      "data": {"values": [{"avg": 209}]},
+      "encoding": {
+        "y": {"field": "avg", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 4,
+        "dy": -5,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "font": "Helvetica, sans-serif",
+        "color": "#2E6EA6"
+      },
+      "data": {"values": [{"avg": 209, "x": 0.1, "label": "National avg: 209"}]},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "avg", "type": "quantitative"},
+        "text": {"field": "label", "type": "nominal"}
+      }
     }
   ],
   "config": {
