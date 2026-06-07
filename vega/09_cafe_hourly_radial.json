@@ -2,23 +2,27 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "When Australia Visits the Café",
-    "subtitle": "Café traffic across a typical 24 hours. Morning rush dominates — 7-10am drives most visits, with a smaller lunch bump.",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "anchor": "start"
+    "subtitle": "Traffic index across 24 hours. 9 am = 100 (peak). Morning rush drives the vast majority of visits.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37",
+    "font": "Georgia, serif",
+    "subtitleFont": "Helvetica, sans-serif"
   },
-  "width": 420,
-  "height": 420,
+  "width": 380,
+  "height": 380,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafe_hourly_traffic.csv"
   },
   "transform": [
     {
-      "calculate": "datum.Hour >= 7 && datum.Hour <= 10 ? 'Morning rush' : (datum.Hour === 12 || datum.Hour === 13 ? 'Lunch bump' : 'Other')",
+      "calculate": "datum.Hour >= 7 && datum.Hour <= 10 ? 'Morning rush (7–10 am)' : (datum.Hour === 12 || datum.Hour === 13 ? 'Lunch bump (12–1 pm)' : 'Other hours')",
       "as": "period"
     }
   ],
-  "mark": {"type": "arc", "innerRadius": 30, "stroke": "white", "strokeWidth": 1.5},
+  "mark": {"type": "arc", "innerRadius": 28, "stroke": "white", "strokeWidth": 1.2},
   "encoding": {
     "theta": {
       "field": "Hour",
@@ -28,22 +32,37 @@
     "radius": {
       "field": "Visits_Index",
       "type": "quantitative",
-      "scale": {"type": "linear", "range": [30, 190], "domain": [0, 100]},
+      "scale": {"type": "linear", "range": [28, 185], "domain": [0, 100]},
       "stack": false
     },
     "color": {
       "field": "period",
       "type": "nominal",
       "scale": {
-        "domain": ["Morning rush", "Lunch bump", "Other"],
+        "domain": ["Morning rush (7–10 am)", "Lunch bump (12–1 pm)", "Other hours"],
         "range": ["#3C2415", "#A0785A", "#D4A96A"]
       },
-      "legend": {"title": "Time of day", "orient": "right"}
+      "legend": {
+        "title": "Time of day",
+        "orient": "bottom",
+        "direction": "vertical",
+        "titleColor": "#3C2415",
+        "titleFont": "Georgia, serif",
+        "titleFontSize": 12,
+        "titleFontWeight": "bold",
+        "labelColor": "#3C2415",
+        "labelFont": "Helvetica, sans-serif",
+        "labelFontSize": 11
+      }
     },
     "tooltip": [
       {"field": "Hour_Label", "type": "nominal", "title": "Hour"},
       {"field": "Visits_Index", "type": "quantitative", "title": "Visit index"}
     ]
   },
-  "view": {"stroke": null}
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
+  }
 }

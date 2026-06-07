@@ -2,12 +2,17 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "The Price of a Flat White",
-    "subtitle": "Sydney leads on price; Hobart still offers the cheapest cup in the country.",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "anchor": "start"
+    "subtitle": "Sydney leads on price; Hobart still offers the most affordable cup in the country.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37",
+    "font": "Georgia, serif",
+    "subtitleFont": "Helvetica, sans-serif"
   },
-  "width": 500,
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "width": 380,
   "height": 280,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/flat_white_price.csv"
@@ -21,13 +26,14 @@
           "type": "nominal",
           "sort": "-x",
           "title": null,
-          "axis": {"labelFontSize": 12}
+          "axis": {"labelFontSize": 12, "labelColor": "#3C2415", "labelFont": "Helvetica, sans-serif", "ticks": false, "domain": false}
         },
         "x": {
           "field": "Price_AUD",
           "type": "quantitative",
           "title": "Price (AUD)",
-          "axis": {"format": "$.2f"}
+          "scale": {"domain": [0, 6]},
+          "axis": {"format": "$,.2f", "labelFontSize": 11, "titleFontSize": 12, "labelColor": "#3C2415", "titleColor": "#3C2415", "grid": true, "gridColor": "#f0e0cc", "labelFont": "Helvetica, sans-serif"}
         },
         "color": {
           "field": "Price_AUD",
@@ -36,8 +42,8 @@
           "legend": null
         },
         "tooltip": [
-          {"field": "City", "type": "nominal"},
-          {"field": "Price_AUD", "type": "quantitative", "title": "Price", "format": "$.2f"}
+          {"field": "City", "type": "nominal", "title": "City"},
+          {"field": "Price_AUD", "type": "quantitative", "title": "Price", "format": "$,.2f"}
         ]
       }
     },
@@ -49,13 +55,19 @@
         "dx": 5,
         "fontSize": 11,
         "fontWeight": "bold",
-        "color": "#3C2415"
+        "color": "#3C2415",
+        "font": "Helvetica, sans-serif"
       },
       "encoding": {
         "y": {"field": "City", "type": "nominal", "sort": "-x"},
         "x": {"field": "Price_AUD", "type": "quantitative"},
-        "text": {"field": "Price_AUD", "type": "quantitative", "format": "$.2f"}
+        "text": {"field": "Price_AUD", "type": "quantitative", "format": "$,.2f"}
       }
     }
-  ]
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
+  }
 }

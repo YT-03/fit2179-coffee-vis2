@@ -2,13 +2,17 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Coffee Through the Generations",
-    "subtitle": "Each row shows 10 people. Filled cups represent daily coffee drinkers in that age group.",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "anchor": "start"
+    "subtitle": "Each row = 10 people. Filled cups show daily drinkers. Unfilled show non-daily drinkers.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37",
+    "font": "Georgia, serif",
+    "subtitleFont": "Helvetica, sans-serif"
   },
-  "width": 480,
-  "height": 320,
+  "width": 340,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/demographics_waffle.csv"
   },
@@ -24,7 +28,7 @@
       }
     }
   ],
-  "mark": {"type": "text", "fontSize": 32, "baseline": "middle"},
+  "mark": {"type": "text", "fontSize": 28, "baseline": "middle"},
   "encoding": {
     "x": {
       "field": "cup",
@@ -36,21 +40,30 @@
       "type": "nominal",
       "sort": ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"],
       "title": null,
-      "axis": {"labelFontSize": 13, "labelPadding": 12, "ticks": false, "domain": false}
+      "axis": {
+        "labelFontSize": 13,
+        "labelColor": "#3C2415",
+        "labelFont": "Helvetica, sans-serif",
+        "labelPadding": 10,
+        "ticks": false,
+        "domain": false
+      }
     },
     "text": {"value": "☕"},
     "color": {
       "field": "filled",
       "type": "nominal",
-      "scale": {
-        "domain": [1, 0],
-        "range": ["#6F4E37", "#E8D4B8"]
-      },
+      "scale": {"domain": [1, 0], "range": ["#6F4E37", "#DDD0BC"]},
       "legend": null
     },
     "tooltip": [
-      {"field": "Age_Group", "type": "nominal", "title": "Age"},
-      {"field": "Daily_Drinkers_Percent", "type": "quantitative", "title": "% who drink daily"}
+      {"field": "Age_Group", "type": "nominal", "title": "Age group"},
+      {"field": "Daily_Drinkers_Percent", "type": "quantitative", "title": "Daily drinkers (%)"}
     ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
   }
 }

@@ -1,14 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Melbourne: The World's Café Capital",
-    "subtitle": "Melbourne has more cafés per person than Vienna, Rome, or Paris.",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "anchor": "start"
+    "text": "Melbourne vs the World",
+    "subtitle": "Cafés per 100,000 people. Melbourne leads every major city on earth.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37",
+    "font": "Georgia, serif",
+    "subtitleFont": "Helvetica, sans-serif"
   },
-  "width": 500,
-  "height": 320,
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "width": 480,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/melbourne_vs_world.csv"
   },
@@ -21,13 +26,14 @@
       "type": "nominal",
       "sort": ["Melbourne", "Vienna", "Rome", "Paris", "Sydney", "London", "New York", "Tokyo"],
       "title": null,
-      "axis": {"labelFontSize": 12}
+      "axis": {"labelFontSize": 12, "labelColor": "#3C2415", "labelFont": "Helvetica, sans-serif", "ticks": false, "domain": false}
     },
     "x": {
       "field": "Cafes_per_100k",
       "type": "quantitative",
       "title": "Cafés per 100,000 people",
-      "axis": {"grid": true}
+      "scale": {"domain": [0, 340]},
+      "axis": {"grid": true, "gridColor": "#f0e0cc", "labelFontSize": 11, "titleFontSize": 12, "labelColor": "#3C2415", "titleColor": "#3C2415", "labelFont": "Helvetica, sans-serif"}
     }
   },
   "layer": [
@@ -37,14 +43,11 @@
         "color": {
           "field": "is_melbourne",
           "type": "nominal",
-          "scale": {
-            "domain": ["Melbourne", "Other"],
-            "range": ["#6F4E37", "#C49B7D"]
-          },
+          "scale": {"domain": ["Melbourne", "Other"], "range": ["#6F4E37", "#C49B7D"]},
           "legend": null
         },
         "tooltip": [
-          {"field": "City", "type": "nominal"},
+          {"field": "City", "type": "nominal", "title": "City"},
           {"field": "Cafes_per_100k", "type": "quantitative", "title": "Cafés per 100k"}
         ]
       }
@@ -57,11 +60,17 @@
         "dx": 5,
         "fontSize": 11,
         "fontWeight": "bold",
-        "color": "#3C2415"
+        "color": "#3C2415",
+        "font": "Helvetica, sans-serif"
       },
       "encoding": {
         "text": {"field": "Cafes_per_100k", "type": "quantitative"}
       }
     }
-  ]
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
+  }
 }

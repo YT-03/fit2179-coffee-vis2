@@ -2,13 +2,17 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "What Australians Order",
-    "subtitle": "Latte and Flat White together make up more than half of all coffees sold.",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "anchor": "start"
+    "subtitle": "Latte and Flat White together account for more than half of all coffees sold.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37",
+    "font": "Georgia, serif",
+    "subtitleFont": "Helvetica, sans-serif"
   },
-  "width": 400,
-  "height": 350,
+  "width": 300,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/coffee_preferences.csv"
   },
@@ -16,16 +20,12 @@
     {"calculate": "datum.Percent + '%'", "as": "label"}
   ],
   "encoding": {
-    "theta": {
-      "field": "Percent",
-      "type": "quantitative",
-      "stack": true
-    },
+    "theta": {"field": "Percent", "type": "quantitative", "stack": true},
     "order": {"field": "Percent", "type": "quantitative", "sort": "descending"}
   },
   "layer": [
     {
-      "mark": {"type": "arc", "innerRadius": 80, "outerRadius": 140, "stroke": "white", "strokeWidth": 2},
+      "mark": {"type": "arc", "innerRadius": 75, "outerRadius": 130, "stroke": "white", "strokeWidth": 2},
       "encoding": {
         "color": {
           "field": "Type",
@@ -35,7 +35,17 @@
             "domain": ["Latte", "Flat White", "Cappuccino", "Long Black", "Espresso", "Cold Brew", "Other"],
             "range": ["#6F4E37", "#A0785A", "#C49B7D", "#8B5A3C", "#5D3A1F", "#D4A96A", "#E8D4B8"]
           },
-          "legend": {"title": "Coffee type"}
+          "legend": {
+            "title": "Coffee type",
+            "titleColor": "#3C2415",
+            "titleFont": "Georgia, serif",
+            "titleFontSize": 12,
+            "titleFontWeight": "bold",
+            "labelColor": "#3C2415",
+            "labelFont": "Helvetica, sans-serif",
+            "labelFontSize": 11,
+            "orient": "right"
+          }
         },
         "tooltip": [
           {"field": "Type", "type": "nominal", "title": "Coffee"},
@@ -44,12 +54,15 @@
       }
     },
     {
-      "mark": {"type": "text", "radius": 165, "fontSize": 12, "fontWeight": "bold"},
+      "mark": {"type": "text", "radius": 152, "fontSize": 11, "fontWeight": "bold", "color": "#3C2415", "font": "Helvetica, sans-serif"},
       "encoding": {
-        "text": {"field": "label", "type": "nominal"},
-        "color": {"value": "#3C2415"}
+        "text": {"field": "label", "type": "nominal"}
       }
     }
   ],
-  "view": {"stroke": null}
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
+  }
 }

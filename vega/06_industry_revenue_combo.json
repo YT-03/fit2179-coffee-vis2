@@ -7,7 +7,9 @@
     "subtitleFontSize": 11,
     "anchor": "start",
     "color": "#3C2415",
-    "subtitleColor": "#6F4E37"
+    "subtitleColor": "#6F4E37",
+    "font": "Georgia, serif",
+    "subtitleFont": "Helvetica, sans-serif"
   },
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": 700,
