@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": "container",
-  "height": 450,
+  "width": 500,
+  "height": 400,
   "projection": { "type": "equirectangular", "center": [134, -28], "scale": 700 },
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/australia_states.json",
