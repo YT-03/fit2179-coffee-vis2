@@ -34,8 +34,11 @@
         "title": "Cafés per 100k people",
         "titleColor": "#3C2415",
         "titleFont": "Georgia, serif",
-        "labelColor": "#6F4E37",
-        "labelFont": "Helvetica, sans-serif"
+        "titleFontSize": 13,
+        "titleFontWeight": "bold",
+        "labelColor": "#3C2415",
+        "labelFont": "Helvetica, sans-serif",
+        "labelFontSize": 12
       }
     },
     "tooltip": [
