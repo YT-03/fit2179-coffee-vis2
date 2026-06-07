@@ -452,15 +452,16 @@ footer a:hover { text-decoration: underline; }
 
 .chart-heading {
   font-family: 'Georgia', serif;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 700;
   color: var(--coffee-dark);
-  margin: 0 0 4px;
+  margin: 0 0 6px;
 }
 
 .chart-subheading {
   font-family: 'Helvetica', sans-serif;
-  font-size: 0.82em;
-  color: var(--coffee-medium);
-  margin: 0 0 8px;
+  font-size: 0.9em;
+  color: var(--coffee-brown);
+  margin: 0 0 10px;
+  line-height: 1.4;
 }
