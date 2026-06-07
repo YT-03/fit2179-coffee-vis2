@@ -50,17 +50,39 @@
     <div class="chapter-label" id="ch1">Chapter 01 · The Nation</div>
 
     <!-- MAP 1: Full width choropleth -->
-    <section class="section-card">
-      <div class="section-text">
+  <section class="section-card">
+    <div class="map-section-layout">
+
+      <!-- LEFT: Text + stat callouts -->
+      <div class="map-text-col">
         <h2>A nation of cafés.</h2>
         <hr class="section-rule">
         <p>Walk down almost any Australian high street and you will find one within minutes — a café, usually independent, often exceptional. With more than 55,000 cafés operating nationwide, Australia has quietly built one of the most café-dense societies in the world. But the numbers are not evenly spread.</p>
-        <p>Tasmania, despite its small population, leads the country on a per-capita basis with 267 cafés per 100,000 people — more than double the Northern Territory's count. Victoria and New South Wales dominate by sheer volume, together accounting for nearly 60% of all cafés nationally.</p>
+
+        <div class="inline-stats">
+          <div class="inline-stat">
+            <span class="inline-stat-number">267</span>
+            <span class="inline-stat-label">cafés per 100k people<br><strong>Tasmania</strong> — national leader</span>
+          </div>
+          <div class="inline-stat">
+            <span class="inline-stat-number">60%</span>
+            <span class="inline-stat-label">of all cafés are in<br><strong>VIC or NSW</strong></span>
+          </div>
+        </div>
+
+        <p>Victoria and New South Wales dominate by sheer volume, together accounting for nearly 60% of all cafés nationally. The Northern Territory sits at the other extreme — vast distances, sparse population, and limited café infrastructure make it an outlier in an otherwise café-saturated country.</p>
+        <p>The ACT, home to Canberra's public service culture, punches above its weight with a strong café presence relative to its size.</p>
+
+        <p class="insight">Tasmania quietly leads the country — its remote charm and tourism economy draw cafés in numbers that punch well above its small population.</p>
       </div>
-      <div class="chart" id="vis1"></div>
-      <p class="section-below">The Northern Territory stands apart — vast distances, sparse population, and limited café infrastructure make it an outlier in an otherwise café-saturated country. The ACT, home to Canberra's public service culture, punches above its weight with a strong café presence relative to its size.</p>
-      <p class="insight">Tasmania quietly leads the country — its remote charm and tourism economy draw cafés in numbers that punch well above its small population.</p>
-    </section>
+
+      <!-- RIGHT: Map -->
+      <div class="map-chart-col">
+        <div class="chart" id="vis1"></div>
+      </div>
+
+    </div>
+  </section>
 
     <!-- 2 CHARTS: Growth + Revenue -->
     <section class="section-card">
