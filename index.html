@@ -84,21 +84,48 @@
       <p class="insight">&#9749; Tasmania quietly leads the country — its remote charm and thriving tourism economy draw cafés in numbers that punch well above its small population of just 600,000.</p>
     </section>
 
-    <!-- Section: Growth line + State scatter -->
+    <!-- Section: Growth line -->
     <section class="section-card">
-      <h2>Growth, interrupted.</h2>
-      <hr class="section-rule">
-      <p>For decades, Australia's café industry seemed bulletproof — growing year after year, adding thousands of new venues, and cultivating one of the world's most loyal coffee-drinking populations. Then 2020 arrived. A sharp collapse during the COVID-19 pandemic reversed years of growth almost overnight. The recovery, however, was swift and decisive — by 2022, the country had more cafés than ever before.</p>
-      <div class="chart-row">
-        <div class="chart-block">
-          <div class="chart" id="vis2"></div>
+      <div class="map-section-layout">
+        <div class="map-text-col">
+          <h2>Growth, interrupted.</h2>
+          <hr class="section-rule">
+          <p>For decades, Australia's café industry seemed bulletproof — growing year after year, adding thousands of new venues. Then 2020 arrived. The COVID-19 pandemic reversed years of growth almost overnight, with more than 3,000 cafés shutting their doors.</p>
+          <p>The recovery, however, was swift and decisive. Driven by pent-up demand, rent relief, and a renewed appreciation for local café culture post-lockdown, the industry bounced back harder than almost any other hospitality segment.</p>
+          <div class="inline-stats">
+            <div class="inline-stat">
+              <span class="inline-stat-number">−3,300</span>
+              <span class="inline-stat-label">cafés lost in<br><strong>2020 alone</strong></span>
+            </div>
+            <div class="inline-stat">
+              <span class="inline-stat-number">+29%</span>
+              <span class="inline-stat-label">growth from<br><strong>2017 to 2024</strong></span>
+            </div>
+          </div>
+          <p class="chart-caption">Source: Australian Bureau of Statistics, Counts of Australian Businesses, 2024.</p>
         </div>
-        <div class="chart-block">
-          <div class="chart" id="vis10"></div>
-          <p class="chart-caption">States with smaller populations — Tasmania, WA, ACT — show proportionally higher café density than their size would suggest, driven by tourism and urban professional culture.</p>
+        <div class="map-chart-col">
+          <div class="chart" id="vis2"></div>
         </div>
       </div>
       <p class="insight">&#9749; The pandemic dip proved temporary — by 2022, Australia had more cafés than ever, powered by pent-up demand and a surge in post-lockdown café culture across the country.</p>
+    </section>
+
+    <!-- Section: State bubble scatter -->
+    <section class="section-card">
+      <div class="map-section-layout">
+        <div class="map-text-col">
+          <h2>Not just about size.</h2>
+          <hr class="section-rule">
+          <p>You might expect the biggest states to have the most café culture — but population alone does not tell the story. Tasmania, despite having fewer than 600,000 residents, leads the nation in cafés per capita. The ACT and Western Australia also punch above their weight.</p>
+          <p>New South Wales and Victoria dominate on raw numbers — but their large populations dilute their per-capita density. The Northern Territory stands alone as a true outlier, with sparse settlement and vast distances limiting café presence.</p>
+          <p>Bubble size represents the total number of cafés in each state — hover over any bubble to see the full breakdown.</p>
+          <p class="chart-caption">Source: Australian Bureau of Statistics, Counts of Australian Businesses, 2024.</p>
+        </div>
+        <div class="map-chart-col">
+          <div class="chart" id="vis10"></div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================================

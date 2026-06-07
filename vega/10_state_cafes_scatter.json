@@ -10,8 +10,8 @@
     "subtitleColor": "#6F4E37"
   },
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": 440,
-  "height": 300,
+  "width": 560,
+  "height": 360,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafes_by_state.csv"
   },

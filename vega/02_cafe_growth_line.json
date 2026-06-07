@@ -10,8 +10,8 @@
     "subtitleColor": "#6F4E37"
   },
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": 480,
-  "height": 280,
+  "width": 600,
+  "height": 340,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafe_growth.csv"
   },
@@ -30,7 +30,7 @@
           "type": "quantitative",
           "title": "Number of cafés",
           "scale": {"domain": [40000, 60000], "nice": false},
-          "axis": {"format": ",", "labelFontSize": 11, "titleFontSize": 12, "grid": true, "gridColor": "#f0e0cc"}
+          "axis": {"format": "~s", "labelFontSize": 11, "titleFontSize": 12, "grid": true, "gridColor": "#f0e0cc"}
         }
       }
     },
