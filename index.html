@@ -14,16 +14,16 @@
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <p class="byline">FIT2179 Data Visualisation 2 · By Yum Tarabzoni · 2026</p>
+        <p class="byline">FIT2179 Data Visualisation 2 &middot; By Yum Tarabzoni &middot; 2026</p>
         <h1>Australia's Coffee Culture</h1>
         <p class="tagline">How a single beverage became central to a nation's daily ritual.</p>
       </div>
       <div class="header-right">
         <p class="nav-label">Jump to chapter</p>
         <nav class="header-nav">
-          <a href="#ch1">01 · The Nation</a>
-          <a href="#ch2">02 · The Cup</a>
-          <a href="#ch3">03 · The Capital</a>
+          <a href="#ch1">01 &middot; The Nation</a>
+          <a href="#ch2">02 &middot; The Cup</a>
+          <a href="#ch3">03 &middot; The Capital</a>
         </nav>
       </div>
     </div>
@@ -35,19 +35,27 @@
       <span class="stat-label">cafés nationwide</span>
     </div>
     <div class="stat-card">
-      <span class="stat-number">$7B</span>
-      <span class="stat-label">industry value in 2024</span>
+      <span class="stat-number">$7.1B</span>
+      <span class="stat-label">industry value in 2026</span>
     </div>
     <div class="stat-card">
       <span class="stat-number">16.3M</span>
       <span class="stat-label">cups consumed every day</span>
     </div>
+    <div class="stat-card">
+      <span class="stat-number">66%</span>
+      <span class="stat-label">of Australians drink daily</span>
+    </div>
   </div>
 
   <div class="container">
 
-    <div class="chapter-label" id="ch1">Chapter 01 · The Nation</div>
+    <!-- ============================================================
+         CHAPTER 01 · THE NATION
+    ============================================================ -->
+    <div class="chapter-label" id="ch1">Chapter 01 &middot; The Nation</div>
 
+    <!-- Section: State map -->
     <section class="section-card">
       <div class="map-section-layout">
         <div class="map-text-col">
@@ -69,20 +77,148 @@
         </div>
         <div class="map-chart-col">
           <p class="chart-heading">Cafés per 100,000 People by Australian State</p>
-          <p class="chart-subheading">Tasmania leads on a per-capita basis, while NSW and VIC dominate by total count.</p>
+          <p class="chart-subheading">Tasmania leads on a per-capita basis, while NSW and VIC dominate by total count. Hover over a state for details.</p>
           <div class="chart" id="vis1"></div>
         </div>
       </div>
-      <p class="insight">Tasmania quietly leads the country — its remote charm and tourism economy draw cafés in numbers that punch well above its small population.</p>
+      <p class="insight">&#9749; Tasmania quietly leads the country — its remote charm and thriving tourism economy draw cafés in numbers that punch well above its small population of just 600,000.</p>
     </section>
 
-  </div>
+    <!-- Section: Growth line + State scatter -->
+    <section class="section-card">
+      <h2>Growth, interrupted.</h2>
+      <hr class="section-rule">
+      <p>For decades, Australia's café industry seemed bulletproof — growing year after year, adding thousands of new venues, and cultivating one of the world's most loyal coffee-drinking populations. Then 2020 arrived. A sharp collapse during the COVID-19 pandemic reversed years of growth almost overnight. The recovery, however, was swift and decisive — by 2022, the country had more cafés than ever before.</p>
+      <div class="chart-row">
+        <div class="chart-block">
+          <div class="chart" id="vis2"></div>
+        </div>
+        <div class="chart-block">
+          <div class="chart" id="vis10"></div>
+          <p class="chart-caption">States with smaller populations — Tasmania, WA, ACT — show proportionally higher café density than their size would suggest, driven by tourism and urban professional culture.</p>
+        </div>
+      </div>
+      <p class="insight">&#9749; The pandemic dip proved temporary — by 2022, Australia had more cafés than ever, powered by pent-up demand and a surge in post-lockdown café culture across the country.</p>
+    </section>
+
+    <!-- ============================================================
+         CHAPTER 02 · THE CUP
+    ============================================================ -->
+    <div class="chapter-label" id="ch2">Chapter 02 &middot; The Cup</div>
+
+    <!-- Section: Preferences + Flat white price -->
+    <section class="section-card">
+      <h2>What's in the cup?</h2>
+      <hr class="section-rule">
+      <p>Australians are opinionated about their coffee. The flat white — widely claimed as an Australian invention — remains a national icon. Together with the latte, it accounts for more than half of all coffees ordered. And while coffee is a daily ritual for the majority, the price of that ritual varies significantly depending on where you live.</p>
+      <div class="chart-row">
+        <div class="chart-block">
+          <div class="chart" id="vis3"></div>
+          <p class="chart-caption">Source: YouGov Australia Coffee Preferences Survey, 2024. Percentages represent share of total coffee orders.</p>
+        </div>
+        <div class="chart-block">
+          <div class="chart" id="vis4"></div>
+          <p class="chart-caption">Source: Statista Australian Coffee Price Report, 2024. Average price of a standard flat white at independent cafés.</p>
+        </div>
+      </div>
+      <p class="insight">&#9749; The flat white is Australia's cultural contribution to global coffee culture — now sold in Starbucks worldwide, yet Sydney's version carries a $1.00 premium over Hobart's.</p>
+    </section>
+
+    <!-- Section: Industry revenue -->
+    <section class="section-card">
+      <h2>A $7 billion industry.</h2>
+      <hr class="section-rule">
+      <p>Australia's café and coffee sector has grown from a $2 billion niche into one of the country's most resilient hospitality industries. The bars below show revenue across two-year intervals from 2004 to 2026; the dark line traces the rate of growth — plummeting in 2020 before staging a powerful rebound. The industry has more than tripled in value since the early 2000s, fuelled by rising consumption, premium pricing, and the embedding of café culture into everyday Australian life.</p>
+      <div class="chart" id="vis6"></div>
+      <p class="chart-caption">Source: IBISWorld Café and Coffee Shop Industry Report, 2026. Revenue figures are in AUD billions; growth rate is period-on-period across two-year intervals.</p>
+      <p class="insight">&#9749; Even amid the pandemic collapse of 2020, Australia's café industry recovered faster than most other hospitality segments — a testament to how deeply coffee is woven into the national daily routine.</p>
+    </section>
+
+    <!-- Section: Import origins -->
+    <section class="section-card">
+      <h2>Where the beans come from.</h2>
+      <hr class="section-rule">
+      <div class="map-section-layout">
+        <div class="map-text-col">
+          <p>Australia grows very little of its own coffee — the climate is suitable only in narrow pockets of North Queensland. The vast majority of beans are imported, with Brazil supplying nearly a third of all imports. Vietnam, Colombia, and Ethiopia round out the top suppliers, reflecting both global commodity supply chains and Australia's growing appetite for specialty and single-origin coffee.</p>
+          <div class="inline-stats">
+            <div class="inline-stat">
+              <span class="inline-stat-number">32%</span>
+              <span class="inline-stat-label">of imports come from<br><strong>Brazil</strong></span>
+            </div>
+            <div class="inline-stat">
+              <span class="inline-stat-number">$1B+</span>
+              <span class="inline-stat-label">annual value of<br><strong>coffee imports</strong></span>
+            </div>
+          </div>
+          <p>Papua New Guinea stands out as Australia's closest coffee-growing neighbour and a rising force in the specialty scene — its highland beans are increasingly sought by Australian roasters for their complex, fruity profiles.</p>
+          <p>The growth of Ethiopian and Colombian imports signals a shift: Australians are becoming more discerning, increasingly seeking out traceable, single-origin coffees beyond the commodity mainstream.</p>
+        </div>
+        <div class="map-chart-col">
+          <div class="chart" id="vis7"></div>
+          <p class="chart-caption">Source: Statista Australian Coffee Import Statistics, 2024. Percentages represent share of total import volume by country of origin.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CHAPTER 03 · THE CAPITAL
+    ============================================================ -->
+    <div class="chapter-label" id="ch3">Chapter 03 &middot; The Capital</div>
+
+    <!-- Section: Melbourne vs world -->
+    <section class="section-card">
+      <div class="map-section-layout">
+        <div class="map-text-col">
+          <h2>The world's café capital.</h2>
+          <hr class="section-rule">
+          <p>Melbourne is, by almost any measure, the café capital of the world. With 310 cafés per 100,000 people, it outpaces Vienna — long considered the spiritual home of café culture — and comfortably surpasses Paris, Rome, London, and New York. This is not an accident of geography or economics.</p>
+          <p>Melbourne's coffee culture has its roots in post-World War II Italian immigration, which brought espresso machines and a continental reverence for the coffee ritual to Australian shores. Over decades, this seeded a culture that now defines the city's global identity — and explains why Starbucks famously collapsed in Australia after opening 84 stores, closing 61 in 2008.</p>
+          <div class="inline-stats">
+            <div class="inline-stat">
+              <span class="inline-stat-number">310</span>
+              <span class="inline-stat-label">cafés per 100k people<br><strong>Melbourne</strong></span>
+            </div>
+            <div class="inline-stat">
+              <span class="inline-stat-number">#1</span>
+              <span class="inline-stat-label">highest café density<br><strong>in the world</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="map-chart-col">
+          <div class="chart" id="vis5"></div>
+          <p class="chart-caption">Source: WorldMetrics Global Café Density Report, 2025. Figures represent cafés and coffee shops per 100,000 urban residents.</p>
+        </div>
+      </div>
+      <p class="insight">&#9749; Melbourne's café culture was forged by immigration and honed by decades of local passion — the result is a café-per-person rate that no other major city on earth has matched.</p>
+    </section>
+
+    <!-- Section: Demographics waffle + Hourly radial -->
+    <section class="section-card">
+      <h2>Who drinks, and when.</h2>
+      <hr class="section-rule">
+      <p>Coffee drinking in Australia crosses generational lines — but not equally. Australians aged 25–44 show the highest rates of daily consumption, typically driven by professional routines, workplace culture, and the social fabric of the morning commute. Older Australians follow closely. As for timing: the morning window from 7 to 10 am drives the overwhelming majority of café visits, with a secondary lunch-hour bump rounding out the day.</p>
+      <div class="chart-row">
+        <div class="chart-block">
+          <div class="chart" id="vis8"></div>
+          <p class="chart-caption">Source: YouGov Australia, 2024. Each row represents 10 people. Filled cups (&#9749;) indicate daily drinkers; unfilled indicate non-daily drinkers in that age group.</p>
+        </div>
+        <div class="chart-block">
+          <div class="chart" id="vis9"></div>
+          <p class="chart-caption">Source: Square Australia POS Traffic Data, 2024. Visit index is normalised to peak hour (9 am = 100). Each arc segment represents one hour of the day.</p>
+        </div>
+      </div>
+      <p class="insight">&#9749; The 7–9 am window defines the Australian café economy — baristas pull more shots in those three hours than in the rest of the day combined. The lunch bump is real, but it never rivals the morning ritual.</p>
+    </section>
+
+  </div><!-- end .container -->
 
   <footer>
-    <p><strong>Australia's Coffee Culture</strong> — A Visualisation by Yum Tarabzoni</p>
+    <p><strong>Australia's Coffee Culture</strong> &mdash; A Data Visualisation by Yum Tarabzoni &middot; FIT2179 Data Visualisation 2 &middot; Monash University &middot; 2026</p>
     <div class="sources">
-      <p>Data sources: Australian Bureau of Statistics · IBISWorld · Statista · YouGov Australia · WorldMetrics · Mordor Intelligence · City of Melbourne CLUE</p>
-      <p><a href="https://github.com/YT-03/fit2179-coffee-vis2">View source on GitHub</a></p>
+      <p>Data sources: Australian Bureau of Statistics &middot; IBISWorld &middot; Statista &middot; YouGov Australia &middot; WorldMetrics &middot; Mordor Intelligence &middot; Square Australia</p>
+      <p><a href="https://github.com/YT-03/fit2179-coffee-vis2" target="_blank">View source on GitHub</a></p>
+      <p class="ai-note">AI tools (Claude by Anthropic) were used to assist with text editing and code generation for this assignment.</p>
     </div>
   </footer>
 
@@ -90,11 +226,20 @@
     const baseURL = "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/vega/";
 
     const charts = [
-      { id: "#vis1", spec: "01_cafes_by_state_map.json" }
+      { id: "#vis1",  spec: "01_cafes_by_state_map.json" },
+      { id: "#vis2",  spec: "02_cafe_growth_line.json" },
+      { id: "#vis3",  spec: "03_coffee_preferences_donut.json" },
+      { id: "#vis4",  spec: "04_flat_white_price_bar.json" },
+      { id: "#vis5",  spec: "05_melbourne_vs_world_bar.json" },
+      { id: "#vis6",  spec: "06_industry_revenue_combo.json" },
+      { id: "#vis7",  spec: "07_import_origins_lollipop.json" },
+      { id: "#vis8",  spec: "08_demographics_waffle.json" },
+      { id: "#vis9",  spec: "09_cafe_hourly_radial.json" },
+      { id: "#vis10", spec: "10_state_cafes_scatter.json" }
     ];
 
     charts.forEach(c => {
-      vegaEmbed(c.id, baseURL + c.spec, {actions: false, renderer: "svg"})
+      vegaEmbed(c.id, baseURL + c.spec, { actions: false, renderer: "svg" })
         .catch(err => console.error("Error loading " + c.spec, err));
     });
   </script>

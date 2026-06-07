@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Population vs Café Density by State",
+    "subtitle": "Larger population does not guarantee more cafés per capita. Bubble size = total cafés.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37"
+  },
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "width": 440,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafes_by_state.csv"
+  },
+  "layer": [
+    {
+      "mark": {"type": "point", "filled": true, "opacity": 0.88, "stroke": "white", "strokeWidth": 1},
+      "encoding": {
+        "x": {
+          "field": "Population_M",
+          "type": "quantitative",
+          "title": "Population (millions)",
+          "scale": {"zero": false, "domain": [0, 9]},
+          "axis": {"labelFontSize": 11, "titleFontSize": 12, "grid": true, "gridColor": "#f0e0cc"}
+        },
+        "y": {
+          "field": "Cafes_per_100k",
+          "type": "quantitative",
+          "title": "Cafés per 100,000 people",
+          "scale": {"zero": false, "domain": [100, 290]},
+          "axis": {"labelFontSize": 11, "titleFontSize": 12, "grid": true, "gridColor": "#f0e0cc"}
+        },
+        "size": {
+          "field": "Cafes",
+          "type": "quantitative",
+          "scale": {"range": [80, 1800]},
+          "legend": {"title": "Total cafés", "orient": "bottom-right", "titleFontSize": 10, "labelFontSize": 9}
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "scale": {
+            "domain": ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"],
+            "range": ["#3C2415", "#6F4E37", "#A0785A", "#8B5A3C", "#C49B7D", "#D4A96A", "#5D3A1F", "#b8a080"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal", "title": "State"},
+          {"field": "Population_M", "type": "quantitative", "title": "Population (M)", "format": ".2f"},
+          {"field": "Cafes_per_100k", "type": "quantitative", "title": "Cafés per 100k"},
+          {"field": "Cafes", "type": "quantitative", "title": "Total cafés", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -14,
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Population_M", "type": "quantitative"},
+        "y": {"field": "Cafes_per_100k", "type": "quantitative"},
+        "text": {"field": "State", "type": "nominal"},
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "scale": {
+            "domain": ["NSW", "VIC", "QLD", "WA", "SA", "TAS", "ACT", "NT"],
+            "range": ["#3C2415", "#6F4E37", "#A0785A", "#8B5A3C", "#C49B7D", "#B8860B", "#5D3A1F", "#888"]
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
+  }
+}

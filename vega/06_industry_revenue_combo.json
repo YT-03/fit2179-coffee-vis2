@@ -1,14 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "From $2 Billion to $7 Billion",
-    "subtitle": "Bars show industry revenue. The dark line tracks year-on-year growth rate — falling sharply in 2020, then rebounding in 2022.",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "anchor": "start"
+    "text": "From $2 Billion to $7 Billion (2004–2026)",
+    "subtitle": "Bars show industry revenue. The dark line tracks growth rate — falling sharply in 2020, then rebounding strongly in 2022.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37"
   },
-  "width": 600,
-  "height": 350,
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "width": 700,
+  "height": 320,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/industry_revenue.csv"
   },
@@ -24,7 +27,7 @@
   ],
   "layer": [
     {
-      "mark": {"type": "bar", "color": "#A0785A", "cornerRadiusEnd": 3},
+      "mark": {"type": "bar", "color": "#C49B7D", "cornerRadiusEnd": 3},
       "encoding": {
         "x": {
           "field": "Year",
@@ -39,23 +42,23 @@
             "title": "Revenue (AUD billions)",
             "titleColor": "#6F4E37",
             "labelColor": "#6F4E37",
-            "format": "$.1f"
+            "format": "$.1f",
+            "titleFontSize": 12,
+            "grid": true,
+            "gridColor": "#f0e0cc"
           }
         },
         "tooltip": [
-          {"field": "Year", "type": "ordinal"},
-          {"field": "Revenue_BAUD", "type": "quantitative", "title": "Revenue ($B)", "format": ".1f"},
-          {"field": "growth_pct", "type": "quantitative", "title": "Growth vs prev (%)", "format": ".1f"}
+          {"field": "Year", "type": "ordinal", "title": "Year"},
+          {"field": "Revenue_BAUD", "type": "quantitative", "title": "Revenue ($B AUD)", "format": ".1f"},
+          {"field": "growth_pct", "type": "quantitative", "title": "Growth vs prior period (%)", "format": ".1f"}
         ]
       }
     },
     {
       "mark": {"type": "line", "color": "#3C2415", "strokeWidth": 2.5, "interpolate": "monotone"},
       "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "ordinal"
-        },
+        "x": {"field": "Year", "type": "ordinal"},
         "y": {
           "field": "growth_pct",
           "type": "quantitative",
@@ -65,7 +68,8 @@
             "labelColor": "#3C2415",
             "format": ".0f",
             "orient": "right",
-            "grid": false
+            "grid": false,
+            "titleFontSize": 12
           }
         }
       }
@@ -73,17 +77,31 @@
     {
       "mark": {"type": "point", "color": "#3C2415", "size": 60, "filled": true},
       "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "ordinal"
-        },
-        "y": {
-          "field": "growth_pct",
-          "type": "quantitative",
-          "axis": null
-        }
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "growth_pct", "type": "quantitative", "axis": null}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -10,
+        "fontSize": 9,
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+        "color": "#A0785A"
+      },
+      "data": {"values": [{"yr": "2020", "label": "↓ COVID-19"}]},
+      "encoding": {
+        "x": {"field": "yr", "type": "ordinal"},
+        "text": {"field": "label", "type": "nominal"}
       }
     }
   ],
-  "resolve": {"scale": {"y": "independent"}}
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
+  }
 }

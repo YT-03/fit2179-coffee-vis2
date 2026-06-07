@@ -419,11 +419,41 @@ footer a:hover { text-decoration: underline; }
   line-height: 1.4;
 }
 
+/* ---------- Stats bar — 4 items ---------- */
+.stats-bar {
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* ---------- Vis 6 full-width chart ---------- */
+#vis6 svg,
+#vis6 canvas {
+  display: block;
+  width: 100% !important;
+}
+
+/* ---------- AI note in footer ---------- */
+.ai-note {
+  margin-top: 12px;
+  font-size: 0.78em;
+  opacity: 0.55;
+}
+
+/* ---------- Chart block — ensure charts fill width ---------- */
+.chart-block .chart {
+  width: 100%;
+  overflow: hidden;
+}
+
 /* ---------- Responsive ---------- */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .chart-row { grid-template-columns: 1fr; }
-  .stats-bar { gap: 30px; }
+  .stats-bar { gap: 30px; justify-content: center; }
   .section-card { padding: 28px 24px; }
   .map-section-layout { grid-template-columns: 1fr; }
   .inline-stats { flex-direction: column; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .header-right { align-items: flex-start; }
+  .header-nav { align-items: flex-start; }
+  .header-left h1 { font-size: 2.2em; }
 }

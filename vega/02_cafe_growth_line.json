@@ -1,46 +1,85 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Australia's Café Boom",
-    "subtitle": "Total number of cafés has grown 29% since 2017, despite a dip during COVID.",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "anchor": "start"
+    "text": "Australia's Café Boom (2017–2024)",
+    "subtitle": "Total cafés grew 29% over seven years, despite a sharp COVID-19 dip in 2020.",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "anchor": "start",
+    "color": "#3C2415",
+    "subtitleColor": "#6F4E37"
   },
-  "width": 600,
-  "height": 350,
+  "autosize": {"type": "fit-x", "contains": "padding"},
+  "width": 480,
+  "height": 280,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafe_growth.csv"
   },
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "temporal",
-      "title": null,
-      "axis": {"format": "%Y", "labelAngle": 0, "tickCount": 8}
-    },
-    "y": {
-      "field": "Total_Cafes",
-      "type": "quantitative",
-      "title": "Number of cafés",
-      "scale": {"domain": [40000, 60000], "nice": false}
-    }
-  },
   "layer": [
     {
-      "mark": {"type": "area", "color": "#D4A96A", "opacity": 0.3, "clip": true, "interpolate": "monotone"}
+      "mark": {"type": "area", "color": "#D4A96A", "opacity": 0.25, "clip": true, "interpolate": "monotone"},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "title": null,
+          "axis": {"format": "%Y", "labelAngle": 0, "tickCount": 8, "labelFontSize": 11}
+        },
+        "y": {
+          "field": "Total_Cafes",
+          "type": "quantitative",
+          "title": "Number of cafés",
+          "scale": {"domain": [40000, 60000], "nice": false},
+          "axis": {"format": ",", "labelFontSize": 11, "titleFontSize": 12, "grid": true, "gridColor": "#f0e0cc"}
+        }
+      }
     },
     {
-      "mark": {"type": "line", "color": "#6F4E37", "strokeWidth": 3, "interpolate": "monotone"}
+      "mark": {"type": "line", "color": "#6F4E37", "strokeWidth": 3, "interpolate": "monotone"},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Total_Cafes", "type": "quantitative"}
+      }
     },
     {
       "mark": {"type": "point", "color": "#6F4E37", "size": 80, "filled": true},
       "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Total_Cafes", "type": "quantitative"},
         "tooltip": [
           {"field": "Year", "type": "temporal", "format": "%Y", "title": "Year"},
           {"field": "Total_Cafes", "type": "quantitative", "title": "Total cafés", "format": ","}
         ]
       }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [5, 4], "color": "#A0785A", "strokeWidth": 1.5},
+      "data": {"values": [{"yr": "2020"}]},
+      "encoding": {
+        "x": {"field": "yr", "type": "temporal"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "dy": -100,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "fontWeight": "bold",
+        "color": "#A0785A"
+      },
+      "data": {"values": [{"yr": "2020", "label": "↓ COVID-19 dip"}]},
+      "encoding": {
+        "x": {"field": "yr", "type": "temporal"},
+        "text": {"field": "label", "type": "nominal"}
+      }
     }
-  ]
+  ],
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"},
+    "font": "Georgia, serif"
+  }
 }
