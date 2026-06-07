@@ -80,7 +80,7 @@
         "fontSize": 13,
         "fontWeight": "bold",
         "font": "Helvetica, sans-serif",
-        "color": "#3C2415"
+        "color": "#E04A00"
       },
       "data": {"values": [{"yr": "2020", "label": "▼ COVID-19"}]},
       "encoding": {
