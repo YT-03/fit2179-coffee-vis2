@@ -12,8 +12,8 @@
     "subtitleFont": "Helvetica, sans-serif"
   },
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": 700,
-  "height": 320,
+  "width": 900,
+  "height": 420,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/industry_revenue.csv"
   },
@@ -87,13 +87,13 @@
       "mark": {
         "type": "text",
         "align": "center",
-        "dy": -10,
-        "fontSize": 9,
-        "fontStyle": "italic",
+        "dy": -14,
+        "fontSize": 13,
         "fontWeight": "bold",
-        "color": "#A0785A"
+        "font": "Helvetica, sans-serif",
+        "color": "#3C2415"
       },
-      "data": {"values": [{"yr": "2020", "label": "↓ COVID-19"}]},
+      "data": {"values": [{"yr": "2020", "label": "▼ COVID-19"}]},
       "encoding": {
         "x": {"field": "yr", "type": "ordinal"},
         "text": {"field": "label", "type": "nominal"}
