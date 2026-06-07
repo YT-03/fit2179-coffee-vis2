@@ -91,9 +91,9 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "baseline": "bottom",
+        "baseline": "top",
         "dx": 4,
-        "dy": -5,
+        "dy": 5,
         "fontSize": 12,
         "fontWeight": "bold",
         "font": "Helvetica, sans-serif",
