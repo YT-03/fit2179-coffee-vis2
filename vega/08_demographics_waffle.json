@@ -1,16 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Daily Coffee Drinkers by Age Group",
-    "subtitle": "Percentage of Australians who drink coffee every day, by generation.",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "anchor": "start",
-    "color": "#3C2415",
-    "subtitleColor": "#6F4E37",
-    "font": "Georgia, serif",
-    "subtitleFont": "Helvetica, sans-serif"
-  },
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": 520,
   "height": 320,

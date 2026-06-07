@@ -1,16 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "When Australia Visits the Café",
-    "subtitle": "Hourly café traffic across a typical day. Each bar = one hour. Visit index normalised to peak (9 am = 100).",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "anchor": "start",
-    "color": "#3C2415",
-    "subtitleColor": "#6F4E37",
-    "font": "Georgia, serif",
-    "subtitleFont": "Helvetica, sans-serif"
-  },
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": 560,
   "height": 320,

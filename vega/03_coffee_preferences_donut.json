@@ -1,16 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "What Australians Order",
-    "subtitle": "Latte and Flat White together account for more than half of all coffees sold.",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "anchor": "start",
-    "color": "#3C2415",
-    "subtitleColor": "#6F4E37",
-    "font": "Georgia, serif",
-    "subtitleFont": "Helvetica, sans-serif"
-  },
   "width": 300,
   "height": 300,
   "data": {

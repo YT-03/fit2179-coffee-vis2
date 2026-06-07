@@ -1,16 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Where Australia's Coffee Comes From",
-    "subtitle": "Brazil supplies nearly a third of all imports, followed by Vietnam and Colombia.",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "anchor": "start",
-    "color": "#3C2415",
-    "subtitleColor": "#6F4E37",
-    "font": "Georgia, serif",
-    "subtitleFont": "Helvetica, sans-serif"
-  },
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": 520,
   "height": 360,

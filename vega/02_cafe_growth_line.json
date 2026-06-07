@@ -1,14 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Australia's Café Boom (2017–2024)",
-    "subtitle": "Total cafés grew 29% over seven years, despite a sharp COVID-19 dip in 2020.",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "anchor": "start",
-    "color": "#3C2415",
-    "subtitleColor": "#6F4E37"
-  },
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": 600,
   "height": 400,

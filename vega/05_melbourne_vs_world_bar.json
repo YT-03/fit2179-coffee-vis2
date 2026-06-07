@@ -1,16 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Melbourne vs the World",
-    "subtitle": "Cafés per 100,000 people. Melbourne leads every major city on earth.",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "anchor": "start",
-    "color": "#3C2415",
-    "subtitleColor": "#6F4E37",
-    "font": "Georgia, serif",
-    "subtitleFont": "Helvetica, sans-serif"
-  },
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": 480,
   "height": 300,

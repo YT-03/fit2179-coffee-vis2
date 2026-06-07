@@ -1,16 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Population vs Café Density by State",
-    "subtitle": "Larger population does not guarantee more cafés per capita. Bubble size = total cafés.",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "anchor": "start",
-    "color": "#3C2415",
-    "subtitleColor": "#6F4E37",
-    "font": "Georgia, serif",
-    "subtitleFont": "Helvetica, sans-serif"
-  },
   "autosize": {"type": "fit-x", "contains": "padding"},
   "width": 660,
   "height": 420,
