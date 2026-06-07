@@ -11,7 +11,7 @@
   --coffee-foam:   #FFF3E0;
   --text-primary:  #2C1A0E;
   --text-secondary:#5D4037;
-  --bg-page:       #EDE0CE;
+  --bg-page:       #c2a174;
   --bg-card:       #f0e9e1;
   --accent:        #8B5A3C;
 }
@@ -218,7 +218,7 @@ header {
 }
 
 .section-card {
-  background: var(--bg-card);
+  background: #EDE0CE;
   border-radius: 10px;
   padding: 36px 48px;
   margin-bottom: 28px;
