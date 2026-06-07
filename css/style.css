@@ -43,9 +43,7 @@ header {
   gap: 40px;
 }
 
-.header-left {
-  flex: 1;
-}
+.header-left { flex: 1; }
 
 .header-left h1 {
   font-size: 3em;
@@ -81,7 +79,6 @@ header {
   font-size: 0.82em;
   text-transform: uppercase;
   letter-spacing: 2px;
-  opacity: 1;
   color: var(--coffee-cream);
   margin: 0;
   font-weight: 600;
@@ -116,22 +113,6 @@ header {
   color: var(--coffee-cream);
 }
 
-/* ---------- Chapter Labels ---------- */
-.chapter-label {
-  font-family: 'Helvetica', sans-serif;
-  font-size: 1.4em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: var(--coffee-foam);
-  background: var(--coffee-brown);
-  padding: 20px 32px;
-  border-radius: 6px;
-  margin: 48px 0 24px;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-}
 /* ---------- Stat Cards ---------- */
 .stats-bar {
   background: var(--coffee-dark);
@@ -193,17 +174,15 @@ header {
 
 /* ---------- Section Cards ---------- */
 .section-card {
-  background: var(--bg-card);
+  background: #EDE0CE;
   border-radius: 10px;
-  padding: 44px 48px;
+  padding: 36px 48px;
   margin-bottom: 28px;
   box-shadow: 0 4px 16px rgba(60, 36, 21, 0.10), 0 1px 4px rgba(60, 36, 21, 0.06);
   border: 1px solid rgba(180, 140, 100, 0.15);
 }
 
-.section-text {
-  margin-bottom: 28px;
-}
+.section-text { margin-bottom: 28px; }
 
 .section-card h2 {
   color: var(--coffee-dark);
@@ -217,15 +196,6 @@ header {
   margin: 0 0 20px;
 }
 
-.section-card {
-  background: #EDE0CE;
-  border-radius: 10px;
-  padding: 36px 48px;
-  margin-bottom: 28px;
-  box-shadow: 0 4px 16px rgba(60, 36, 21, 0.10), 0 1px 4px rgba(60, 36, 21, 0.06);
-  border: 1px solid rgba(180, 140, 100, 0.15);
-}
-
 .section-below {
   color: var(--text-secondary);
   font-size: 1.05em;
@@ -236,10 +206,15 @@ header {
 .chart {
   margin: 8px 0;
   width: 100%;
-  overflow-x: auto;
+  overflow: hidden;
 }
 
-/* Two-column layout */
+#vis1 svg {
+  display: block;
+  margin: 0 !important;
+}
+
+/* ---------- Two-column layout ---------- */
 .chart-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -351,13 +326,6 @@ footer a:hover { text-decoration: underline; }
   opacity: 0.75;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  .chart-row { grid-template-columns: 1fr; }
-  .stats-bar { gap: 30px; }
-  .section-card { padding: 28px 24px; }
-}
-
 /* ---------- Map Section Layout ---------- */
 .map-section-layout {
   display: grid;
@@ -397,11 +365,6 @@ footer a:hover { text-decoration: underline; }
   overflow: hidden;
 }
 
-#vis1 svg {
-  display: block;
-  margin: 0 !important;
-}
-
 /* ---------- Inline Stat Callouts ---------- */
 .inline-stats {
   display: flex;
@@ -439,11 +402,7 @@ footer a:hover { text-decoration: underline; }
   color: var(--coffee-cream);
 }
 
-@media (max-width: 900px) {
-  .map-section-layout { grid-template-columns: 1fr; }
-  .inline-stats { flex-direction: column; }
-}
-
+/* ---------- Chart heading ---------- */
 .chart-heading {
   font-family: 'Georgia', serif;
   font-size: 1.1em;
@@ -458,4 +417,13 @@ footer a:hover { text-decoration: underline; }
   color: var(--coffee-brown);
   margin: 0 0 10px;
   line-height: 1.4;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .chart-row { grid-template-columns: 1fr; }
+  .stats-bar { gap: 30px; }
+  .section-card { padding: 28px 24px; }
+  .map-section-layout { grid-template-columns: 1fr; }
+  .inline-stats { flex-direction: column; }
 }
