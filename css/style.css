@@ -239,9 +239,14 @@ header {
   overflow-x: auto;
 }
 
-#vis1 svg, #vis10 svg {
+#vis2 svg, #vis10 svg {
   display: block;
   margin: 0 auto !important;
+}
+
+#vis1 {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Two-column layout */
