@@ -119,16 +119,18 @@ header {
 /* ---------- Chapter Labels ---------- */
 .chapter-label {
   font-family: 'Helvetica', sans-serif;
-  font-size: 0.95em;
+  font-size: 1.1em;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--coffee-foam);
   background: var(--coffee-brown);
-  padding: 14px 24px;
+  padding: 16px 32px;
   border-radius: 6px;
   margin: 48px 0 24px;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 /* ---------- Stat Cards ---------- */
 .stats-bar {

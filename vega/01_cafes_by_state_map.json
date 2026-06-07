@@ -45,5 +45,9 @@
       {"field": "Population_M", "type": "quantitative", "title": "Population (M)"},
       {"field": "Cafes_per_100k", "type": "quantitative", "title": "Cafés per 100k"}
     ]
+  },
+  "config": {
+    "background": "transparent",
+    "view": {"stroke": "transparent"}
   }
 }
