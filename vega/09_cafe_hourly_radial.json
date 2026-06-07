@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": 560,
-  "height": 340,
+  "width": 580,
+  "height": 360,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/cafe_hourly_traffic.csv"
   },
@@ -35,16 +35,8 @@
           "field": "Visits_Index",
           "type": "quantitative",
           "title": "Visit index (peak = 100)",
-          "scale": {"domain": [0, 115]},
-          "axis": {
-            "labelFontSize": 11,
-            "titleFontSize": 12,
-            "labelColor": "#3C2415",
-            "titleColor": "#3C2415",
-            "labelFont": "Helvetica, sans-serif",
-            "grid": true,
-            "gridColor": "#f0e0cc"
-          }
+          "scale": {"domain": [0, 130]},
+          "axis": {"labelFontSize": 11, "titleFontSize": 12, "labelColor": "#3C2415", "titleColor": "#3C2415", "labelFont": "Helvetica, sans-serif", "grid": true, "gridColor": "#f0e0cc"}
         },
         "color": {
           "field": "period",
@@ -74,25 +66,30 @@
       }
     },
     {
-      "transform": [{"filter": "datum.Visits_Index >= 50"}],
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "bottom",
-        "dy": -4,
-        "fontSize": 10,
-        "fontWeight": "bold",
-        "font": "Helvetica, sans-serif",
-        "color": "#3C2415"
-      },
+      "transform": [{"filter": "datum.Visits_Index >= 50 && datum.Hour !== 9"}],
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -4, "fontSize": 10, "fontWeight": "bold", "font": "Helvetica, sans-serif", "color": "#6F4E37"},
       "encoding": {
-        "x": {
-          "field": "Hour",
-          "type": "ordinal",
-          "sort": {"field": "Hour", "order": "ascending"}
-        },
+        "x": {"field": "Hour", "type": "ordinal", "sort": {"field": "Hour", "order": "ascending"}},
         "y": {"field": "Visits_Index", "type": "quantitative"},
         "text": {"field": "Visits_Index", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.Hour === 9"}],
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -4, "fontSize": 11, "fontWeight": "bold", "font": "Helvetica, sans-serif", "color": "#D4A96A"},
+      "encoding": {
+        "x": {"field": "Hour", "type": "ordinal", "sort": {"field": "Hour", "order": "ascending"}},
+        "y": {"field": "Visits_Index", "type": "quantitative"},
+        "text": {"value": "100"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.Hour === 9"}],
+      "mark": {"type": "text", "align": "center", "baseline": "bottom", "dy": -20, "fontSize": 11, "fontWeight": "bold", "font": "Helvetica, sans-serif", "color": "#D4A96A"},
+      "encoding": {
+        "x": {"field": "Hour", "type": "ordinal", "sort": {"field": "Hour", "order": "ascending"}},
+        "y": {"field": "Visits_Index", "type": "quantitative"},
+        "text": {"value": "★ Peak"}
       }
     }
   ],

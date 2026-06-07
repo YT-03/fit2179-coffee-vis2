@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 300,
-  "height": 300,
+  "width": 340,
+  "height": 340,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/coffee_preferences.csv"
   },
@@ -14,7 +14,7 @@
   },
   "layer": [
     {
-      "mark": {"type": "arc", "innerRadius": 75, "outerRadius": 130, "stroke": "white", "strokeWidth": 2},
+      "mark": {"type": "arc", "innerRadius": 85, "outerRadius": 145, "stroke": "white", "strokeWidth": 2},
       "encoding": {
         "color": {
           "field": "Type",
@@ -43,10 +43,37 @@
       }
     },
     {
-      "mark": {"type": "text", "radius": 152, "fontSize": 11, "fontWeight": "bold", "color": "#3C2415", "font": "Helvetica, sans-serif"},
+      "mark": {"type": "text", "radius": 168, "fontSize": 11, "fontWeight": "bold", "color": "#3C2415", "font": "Helvetica, sans-serif"},
       "encoding": {
         "text": {"field": "label", "type": "nominal"}
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 34,
+        "fontWeight": "bold",
+        "font": "Georgia, serif",
+        "color": "#3C2415",
+        "dy": -14,
+        "align": "center",
+        "baseline": "middle"
+      },
+      "data": {"values": [{}]},
+      "encoding": {"text": {"value": "52%"}}
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "font": "Helvetica, sans-serif",
+        "color": "#6F4E37",
+        "dy": 16,
+        "align": "center",
+        "baseline": "middle"
+      },
+      "data": {"values": [{}]},
+      "encoding": {"text": {"value": "Latte & Flat White"}}
     }
   ],
   "config": {

@@ -428,6 +428,25 @@ footer a:hover { text-decoration: underline; }
   gap: 40px;
 }
 
+/* ---------- Intro band ---------- */
+.intro-band {
+  background: var(--bg-card);
+  border-top: 3px solid var(--coffee-cream);
+  border-bottom: 3px solid var(--coffee-cream);
+  padding: 36px 60px;
+  text-align: center;
+}
+
+.intro-paragraph {
+  max-width: 860px;
+  margin: 0 auto;
+  font-family: Georgia, serif;
+  font-size: 1.15em;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-style: italic;
+}
+
 /* ---------- Vis 6 full-width chart ---------- */
 #vis6 svg,
 #vis6 canvas {

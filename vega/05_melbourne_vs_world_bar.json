@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "autosize": {"type": "fit-x", "contains": "padding"},
-  "width": 480,
-  "height": 300,
+  "width": 520,
+  "height": 320,
   "data": {
     "url": "https://raw.githubusercontent.com/YT-03/fit2179-coffee-vis2/main/data/melbourne_vs_world.csv"
   },
@@ -21,7 +21,7 @@
       "field": "Cafes_per_100k",
       "type": "quantitative",
       "title": "Cafés per 100,000 people",
-      "scale": {"domain": [0, 340]},
+      "scale": {"domain": [0, 360]},
       "axis": {"grid": true, "gridColor": "#f0e0cc", "labelFontSize": 11, "titleFontSize": 12, "labelColor": "#3C2415", "titleColor": "#3C2415", "labelFont": "Helvetica, sans-serif"}
     }
   },
@@ -32,7 +32,7 @@
         "color": {
           "field": "is_melbourne",
           "type": "nominal",
-          "scale": {"domain": ["Melbourne", "Other"], "range": ["#6F4E37", "#C49B7D"]},
+          "scale": {"domain": ["Melbourne", "Other"], "range": ["#3C2415", "#C49B7D"]},
           "legend": null
         },
         "tooltip": [
@@ -42,18 +42,43 @@
       }
     },
     {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "middle",
-        "dx": 5,
-        "fontSize": 11,
-        "fontWeight": "bold",
-        "color": "#3C2415",
-        "font": "Helvetica, sans-serif"
-      },
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 5, "fontSize": 11, "fontWeight": "bold", "color": "#3C2415", "font": "Helvetica, sans-serif"},
       "encoding": {
         "text": {"field": "Cafes_per_100k", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.City === 'Melbourne'"}],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -10,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "font": "Helvetica, sans-serif",
+        "color": "#D4A96A"
+      },
+      "encoding": {
+        "y": {"field": "City", "type": "nominal", "sort": ["Melbourne", "Vienna", "Rome", "Paris", "Sydney", "London", "New York", "Tokyo"]},
+        "x": {"field": "Cafes_per_100k", "type": "quantitative"},
+        "text": {"value": "★ World's highest"}
+      }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [5, 4], "color": "#A0785A", "strokeWidth": 1.5},
+      "data": {"values": [{"vienna": 290}]},
+      "encoding": {
+        "x": {"field": "vienna", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 4, "dy": 0, "fontSize": 10, "fontStyle": "italic", "font": "Helvetica, sans-serif", "color": "#A0785A"},
+      "data": {"values": [{"vienna": 290, "city": "Tokyo", "label": "Vienna: 290"}]},
+      "encoding": {
+        "x": {"field": "vienna", "type": "quantitative"},
+        "y": {"field": "city", "type": "nominal", "sort": ["Melbourne", "Vienna", "Rome", "Paris", "Sydney", "London", "New York", "Tokyo"]},
+        "text": {"field": "label", "type": "nominal"}
       }
     }
   ],
